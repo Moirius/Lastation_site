@@ -110,10 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Active nav link ── */
   const navLinks = document.querySelectorAll('.nav-links a, .nav-mobile a');
-  const current  = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === current || (current === '' && href === 'index.html')) {
+    if (!href) return;
+    const linkPath = href.replace(/\/$/, '') || '/';
+    if (linkPath === currentPath) {
       link.classList.add('active');
     }
   });
