@@ -16,8 +16,11 @@
 | `faq/importance-du-montage-video.html` | ✅ Fait | Article #01 — PRODUCTION, ~1500 mots |
 | `faq/comment-estimer-devis-video.html` | ✅ Fait | Article #02 — BUDGET, ~1400 mots, FAQ schema |
 | `work.html` | ⏭ Ne pas recréer | Lier uniquement dans la navigation |
-| `sitemap.xml` | ❌ À faire | Lister toutes les pages dont les articles |
-| `robots.txt` | ❌ À faire | Standard |
+| `sitemap.xml` | ✅ Fait | 7 URLs, toutes en URLs propres (sans .html) |
+| `robots.txt` | ✅ Fait | Standard, pointe vers sitemap |
+| `.htaccess` | ✅ Fait | Clean URLs + redirections 301 .html → propre |
+| `.github/workflows/deploy.yml` | ✅ Fait | Auto-deploy GitHub → Hostinger via FTPS |
+| `HOSTINGER.md` | ✅ Fait | Guide de déploiement complet |
 
 ---
 
@@ -29,8 +32,8 @@
 ├── about.html
 ├── services.html
 ├── contact.html
-├── clients.html          ← à créer
-├── work.html             ← NE PAS RECRÉER (déjà existant côté client)
+├── clients.html          ← abandonné (remplacé par FAQ/SEO)
+├── work.html             ← NE PAS RECRÉER (lien nav → portfolio.lastation-prod.com)
 ├── PROMPT.md             ← brief complet
 ├── CLAUDE.md             ← ce fichier
 ├── css/
@@ -49,6 +52,12 @@
 │   │   └── LOGO LA STATION-06.png
 │   └── vidéos/
 │       └── ShReel HZ-Sans Logo.mp4   ← vidéo showreel (fond hero)
+├── sitemap.xml           ← ✅ créé
+├── robots.txt            ← ✅ créé
+├── .htaccess             ← ✅ créé (clean URLs Apache)
+├── .github/
+│   └── workflows/
+│       └── deploy.yml    ← ✅ GitHub Actions FTPS deploy
 └── infos LA STATION/
     ├── La_Station_Entreprise.md
     └── La_Station_Identite_Visuelle.md
@@ -57,7 +66,9 @@
 **Stack :** HTML5 / CSS3 / JS vanilla — aucun framework CSS.
 **Fonts :** Barlow Condensed (Google Fonts CDN).
 **Animations :** GSAP 3.12.5 + ScrollTrigger (CDN `cdnjs.cloudflare.com`).
-**Hébergement cible :** Hostinger statique.
+**Hébergement :** Hostinger statique — **EN LIGNE** sur `lastation-prod.com`
+**Portfolio WordPress :** prévu sur `portfolio.lastation-prod.com` (en attente transfert domaine Wix ~5-7 jours)
+**Déploiement :** Git push → GitHub Actions → FTPS → `public_html/` Hostinger (auto)
 
 ---
 
@@ -201,6 +212,8 @@ bloomparis.tv — dark cinéma, impact immédiat, composition asymétrique.
 - `loading="lazy"` sur toutes les images sauf au-dessus du fold
 - Schema.org `LocalBusiness` sur chaque page
 - Chemins vidéo : URL-encoder les caractères spéciaux (espaces → `%20`, é → `%C3%A9`)
+- **URLs internes :** TOUJOURS sans `.html` (ex: `href="about"` et non `href="about.html"`)
+- **Canonical + og:url :** TOUJOURS en URL propre absolue (ex: `https://lastation-prod.com/about`)
 
 ### JS
 - Vanilla uniquement — aucun import, aucun bundler
@@ -243,9 +256,10 @@ Ne plus réintroduire ces éléments sans validation explicite :
 
 ## PROCHAINES ÉTAPES
 
-1. **`clients.html`** — Grille 2 catégories (Scène musicale / Événementiel & entreprises), cards avec hover, liens YouTube/Instagram
-2. **`sitemap.xml`** — Lister index, services, about, clients, contact
-3. **`robots.txt`** — Standard
+1. **Transfert domaine Wix → Hostinger** — En cours (~5-7 jours). Une fois terminé : créer le sous-domaine `portfolio.lastation-prod.com` dans hPanel et y pointer WordPress.
+2. **Portfolio WordPress** — Shortcode `grille-infinie` refondu (fichier `work-shortcode-refondu.php`) à coller dans Code Snippets. Design matche le site statique (Barlow Condensed, --noir, --or, boutons or).
+3. **Vérifier les liens WORK** — Tous les `href` de navigation pointent vers `https://work.lastation-prod.com` (à confirmer une fois le sous-domaine actif).
+4. **Nouveaux articles FAQ** — Continuer la stratégie SEO avec d'autres articles dans `/faq/`.
 
 ---
 
@@ -271,3 +285,13 @@ Ne plus réintroduire ces éléments sans validation explicite :
 - **index.html :** suppression mention "Première rencontre gratuite" dans l'accroche
 - Vidéo showreel `ShReel HZ-Sans Logo.mp4` intégrée en fond hero sur index, about, services
 - `CLAUDE.md` mis à jour
+
+### Session 3 — 2026-04-07
+- **Shortcode WordPress refondu** — `work-shortcode-refondu.php` : reskin complet du shortcode `grille-infinie` aux couleurs du site (Barlow Condensed, --noir, --or, header identique au site statique, boutons filtres or, cards sans border-radius). Logique PHP/JS (masonry, infinite scroll, YouTube) inchangée.
+- **Stratégie hébergement** — Site statique sur `lastation-prod.com` (Hostinger), portfolio WordPress sur `portfolio.lastation-prod.com` (sous-domaine).
+- **GitHub + Hostinger auto-deploy** — Mise en place `.github/workflows/deploy.yml` (GitHub Actions → FTPS → `public_html/`). Push sur `main` = déploiement automatique.
+- **`HOSTINGER.md` créé** — Guide complet : accès FTP, secrets GitHub, procédure déploiement, structure dossiers.
+- **Audit SEO complet** — Ajout canonicals, og:image absolues, og:url, H1 sémantique sur contact.html, correction meta description contact.
+- **`sitemap.xml` créé** — 7 URLs (index, about, services, contact, faq/, 2 articles), toutes en URLs propres.
+- **`robots.txt` créé** — Standard + lien sitemap.
+- **Clean URLs** — `.htaccess` Apache : redirections 301 `.html` → URL propre, réécriture transparente. Tous les `href` internes mis à jour (sans `.html`). `js/main.js` : détection lien actif basée sur `pathname` (plus de dépendance au `.html`). Toutes les balises `canonical` et `og:url` corrigées sur les 7 pages.
