@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- SEO -->
+  <title>Nos Services — La Station | Agence audiovisuelle Rennes</title>
+  <meta name="description" content="Films d'entreprise, clips vidéo, captation live, V-Jing, motion design, 3D… Découvrez les services de La Station, agence audiovisuelle à Rennes." />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Nos Services — La Station" />
+  <meta property="og:description" content="Nos prestations audiovisuelles sur mesure. Films d'entreprise, clips, reportages, live, V-Jing, motion design et plus encore." />
+  <meta property="og:image"       content="https://lastation-prod.com/assets/images/og-services.jpg" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://lastation-prod.com/services.html" />
+  <link rel="canonical"           href="https://lastation-prod.com/services.html" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "La Station",
+    "description": "Agence audiovisuelle basée à Rennes",
+    "telephone": "+33675611172",
+    "email": "contact@lastation-prod.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rennes",
+      "addressRegion": "Bretagne",
+      "addressCountry": "FR"
+    },
+    "url": "https://lastation-prod.com",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services audiovisuels"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <style>
+    /* ════════════════════════════════════════
+       PAGE SERVICES — STYLES SPÉCIFIQUES
+    ════════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .services-hero {
+      position: relative;
+      min-height: 80vh;
+      min-height: 80svh;
+      background: var(--noir);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse 80% 80% at 50% 50%, rgba(15,15,18,0.45) 0%, rgba(15,15,18,0.82) 100%),
+        linear-gradient(to right, rgba(15,15,18,0.5) 0%, transparent 40%, transparent 60%, rgba(15,15,18,0.5) 100%);
+      pointer-events: none;
+    }
+
+
+    .hero-deco-line {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent 0%, rgba(200,168,75,0.15) 40%, rgba(200,168,75,0.15) 70%, transparent 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .hero-deco-line--1 { left: 15%; }
+    .hero-deco-line--2 { right: 15%; }
+
+    .services-hero-content { position: relative; z-index: 3; }
+
+    .services-hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .services-hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px; height: 1px;
+      background: var(--or);
+    }
+
+    .services-hero-title {
+      font-size: clamp(64px, 12vw, 148px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      color: var(--blanc);
+      margin-bottom: 28px;
+    }
+    .services-hero-sub {
+      font-size: clamp(15px, 1.8vw, 18px);
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+    .services-hero-sub strong { color: var(--blanc); font-weight: 500; }
+
+    /* scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+    /* ── Compteur de services ── */
+    .services-count {
+      position: absolute;
+      right: 40px;
+      bottom: 88px;
+      font-size: 96px;
+      font-weight: 900;
+      color: rgba(200,168,75,0.08);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ════════════════════════════════════════
+       LAYOUT 2 COLONNES
+    ════════════════════════════════════════ */
+    .services-layout {
+      background: var(--noir);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ── Menu vertical gauche ── */
+    .services-menu {
+      border-right: 1px solid rgba(255,255,255,0.07);
+      padding: 64px 0;
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
+    .services-menu::-webkit-scrollbar { display: none; }
+
+    .menu-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 32px;
+      margin-bottom: 20px;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 32px;
+      cursor: none;
+      transition: background 0.2s;
+      border-left: 2px solid transparent;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .menu-item:hover {
+      background: rgba(255,255,255,0.03);
+    }
+    .menu-item.active {
+      border-left-color: var(--or);
+      background: rgba(200,168,75,0.05);
+    }
+    .menu-item.active .menu-item__num { color: var(--or); }
+    .menu-item.active .menu-item__name { color: var(--blanc); }
+
+    .menu-item__num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: rgba(136,136,136,0.5);
+      width: 20px;
+      flex-shrink: 0;
+      transition: color 0.25s;
+    }
+    .menu-item__name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.25s;
+      line-height: 1.2;
+    }
+
+    /* ── Panneau de détail droit ── */
+    .services-detail {
+      padding: 64px 64px 80px;
+    }
+
+    /* Carte de service */
+    .service-panel {
+      display: none;
+      animation: panel-in 0.4s var(--ease) both;
+    }
+    .service-panel.active { display: block; }
+
+    @keyframes panel-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .panel-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 16px;
+    }
+    .panel-title {
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      color: var(--blanc);
+      margin-bottom: 32px;
+    }
+    .panel-divider {
+      width: 48px; height: 2px;
+      background: var(--or);
+      margin-bottom: 32px;
+    }
+    .panel-description {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 36px;
+    }
+    .panel-description strong { color: var(--blanc); font-weight: 500; }
+
+    .panel-points {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .panel-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--blanc);
+      line-height: 1.5;
+    }
+    .panel-point::before {
+      content: '—';
+      color: var(--or);
+      flex-shrink: 0;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    .panel-tarif {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 24px;
+      border: 1px solid rgba(200,168,75,0.3);
+      margin-bottom: 32px;
+    }
+    .panel-tarif__label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .panel-tarif__price {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--or);
+      letter-spacing: -0.01em;
+    }
+
+    /* Navigation entre services */
+    .panel-nav {
+      display: flex;
+      gap: 12px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .panel-nav-btn {
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: none;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+    }
+    .panel-nav-btn:hover { color: var(--or); }
+    .panel-nav-btn span { font-size: 16px; line-height: 1; }
+
+    /* ════════════════════════════════════════
+       TARIFS TABLEAU
+    ════════════════════════════════════════ */
+    .tarifs-section {
+      background: var(--toile);
+      padding: 120px 0;
+    }
+    .tarifs-section .section-label {
+      color: var(--muted);
+    }
+    .tarifs-section .section-label::before { background: #555; }
+
+    .tarifs-table-wrap {
+      overflow-x: auto;
+      margin-top: 56px;
+    }
+    .tarifs-table {
+      width: 100%;
+      min-width: 480px;
+      border-collapse: collapse;
+      font-family: var(--font);
+    }
+    .tarifs-table thead tr {
+      border-bottom: 2px solid var(--noir);
+    }
+    .tarifs-table th {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 0 16px;
+      text-align: left;
+    }
+    .tarifs-table th:last-child { text-align: right; }
+    .tarifs-table td {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(15,15,18,0.1);
+      vertical-align: top;
+    }
+    .tarifs-table td:last-child { text-align: right; }
+    .tarifs-table tbody tr:last-child td { border-bottom: none; }
+    .tarifs-table tbody tr:hover td { background: rgba(15,15,18,0.03); }
+
+    .tarif-service {
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--noir);
+      line-height: 1;
+    }
+    .tarif-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .tarif-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--noir);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .tarif-price--devis {
+      color: var(--muted);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .tarifs-note {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .tarifs-note strong { color: var(--noir); font-weight: 700; }
+    .tarifs-note::before {
+      content: '●';
+      color: var(--or);
+      font-size: 8px;
+    }
+
+    /* ════════════════════════════════════════
+       ABONNEMENTS
+    ════════════════════════════════════════ */
+    .abonnements-section {
+      background: var(--noir);
+      padding: 120px 0;
+    }
+
+    .abonnements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+    }
+
+    .abo-card {
+      padding: 48px 36px;
+      background: rgba(255,255,255,0.03);
+      border-top: 2px solid transparent;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .abo-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200,168,75,0.04) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .abo-card:hover {
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-4px);
+    }
+    .abo-card:hover::before { opacity: 1; }
+
+    /* Card centrale mise en avant */
+    .abo-card--featured {
+      border-top-color: var(--or);
+      background: rgba(200,168,75,0.05);
+    }
+    .abo-card--featured::before { opacity: 1; }
+
+    .abo-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      background: var(--or);
+      color: var(--noir);
+      margin-bottom: 24px;
+    }
+    .abo-badge--outline {
+      background: transparent;
+      border: 1px solid rgba(136,136,136,0.4);
+      color: var(--muted);
+    }
+
+    .abo-name {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--blanc);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .abo-price {
+      font-size: clamp(44px, 5vw, 60px);
+      font-weight: 900;
+      color: var(--blanc);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .abo-price span {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0;
+    }
+
+    .abo-divider {
+      width: 32px; height: 1px;
+      background: rgba(200,168,75,0.4);
+      margin: 24px 0;
+    }
+
+    .abo-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .abo-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .abo-feature--highlight { color: var(--blanc); font-weight: 500; }
+    .abo-feature::before {
+      content: '✓';
+      color: var(--or);
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .abo-remise {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--or);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 0;
+      border-top: 1px solid rgba(200,168,75,0.2);
+      margin-bottom: 28px;
+    }
+
+    /* ════════════════════════════════════════
+       CTA FINAL
+    ════════════════════════════════════════ */
+    .services-cta {
+      background: var(--toile);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .services-cta .section-title { color: var(--noir); margin-bottom: 16px; }
+    .services-cta p {
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 36px;
+    }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE SERVICES
+    ════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .services-layout {
+        grid-template-columns: 240px 1fr;
+      }
+      .services-detail { padding: 48px 40px; }
+      .abonnements-grid { grid-template-columns: 1fr; gap: 2px; }
+    }
+
+    @media (max-width: 768px) {
+      .services-layout {
+        grid-template-columns: 1fr;
+      }
+      .services-menu {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        mask-image: linear-gradient(to right, transparent 0%, black 5%, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 85%, transparent 100%);
+      }
+      .services-menu::-webkit-scrollbar { display: none; }
+      .menu-label { display: none; }
+      .menu-item {
+        padding: 16px 20px;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        flex-shrink: 0;
+      }
+      .menu-item.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--or);
+      }
+      .services-detail { padding: 40px 20px; }
+      .services-count { display: none; }
+      .hero-deco-line { display: none; }
+      .abonnements-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- Page transition -->
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="La Station — Accueil">
+      <img src="images/LOGO LA STATION-05.png" alt="La Station" />
+    </a>
+
+    <nav class="nav-links" role="navigation" aria-label="Navigation principale">
+      <a href="https://work.lastation-prod.com">WORK</a><span class="nav-dot">.</span>
+      <a href="services.html" class="active">SERVICES</a><span class="nav-dot">.</span>
+      <a href="faq/index.html">FAQ</a><span class="nav-dot">.</span>
+      <a href="about.html">ABOUT</a><span class="nav-dot">.</span>
+      <a href="contact.html">CONTACT</a><span class="nav-dot">.</span>
+    </nav>
+
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="nav-mobile" aria-label="Navigation mobile">
+    <a href="https://work.lastation-prod.com">WORK</a>
+    <a href="services.html">SERVICES</a>
+    <a href="faq/index.html">FAQ</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section class="services-hero" aria-labelledby="services-hero-title">
+      <!-- Vidéo de fond -->
+      <video
+        class="hero-video"
+        src="assets/vid%C3%A9os/ShReel%20HZ-Sans%20Logo.mp4"
+        autoplay muted loop playsinline
+        aria-hidden="true"
+        preload="metadata"
+      ></video>
+
+      <div class="hero-deco-line hero-deco-line--1" aria-hidden="true"></div>
+      <div class="hero-deco-line hero-deco-line--2" aria-hidden="true"></div>
+
+      <div class="container services-hero-content">
+        <p class="services-hero-eyebrow anim-fade-up">Nos prestations audiovisuelles</p>
+        <h1 class="services-hero-title anim-fade-up anim-fade-up--d1" id="services-hero-title">
+          NOS<br/>SERVICES.
+        </h1>
+        <p class="services-hero-sub anim-fade-up anim-fade-up--d2">
+          Du film d'entreprise au clip artistique,
+          de la captation live au V-Jing —
+          <strong>chaque projet mérite une réponse sur mesure.</strong>
+        </p>
+      </div>
+
+
+      <div class="hero-scroll scroll-indicator" aria-hidden="true">
+        <span class="scroll-indicator__label">SCROLL</span>
+        <span class="scroll-indicator__dot"></span>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         LAYOUT 2 COLONNES : MENU + DÉTAIL
+    ══════════════════════════════════════ -->
+    <section class="services-layout" aria-label="Catalogue des services" id="catalogue">
+
+      <!-- Menu gauche -->
+      <aside class="services-menu" role="navigation" aria-label="Liste des services">
+        <p class="menu-label">Prestations</p>
+
+        <button class="menu-item active" data-service="film" aria-pressed="true">
+          <span class="menu-item__num">01</span>
+          <span class="menu-item__name">Film d'entreprise</span>
+        </button>
+        <button class="menu-item" data-service="reportage" aria-pressed="false">
+          <span class="menu-item__num">02</span>
+          <span class="menu-item__name">Reportage</span>
+        </button>
+        <button class="menu-item" data-service="publicite" aria-pressed="false">
+          <span class="menu-item__num">03</span>
+          <span class="menu-item__name">Publicité</span>
+        </button>
+        <button class="menu-item" data-service="reseaux" aria-pressed="false">
+          <span class="menu-item__num">04</span>
+          <span class="menu-item__name">Réseaux sociaux</span>
+        </button>
+        <button class="menu-item" data-service="clip" aria-pressed="false">
+          <span class="menu-item__num">05</span>
+          <span class="menu-item__name">Clip vidéo</span>
+        </button>
+        <button class="menu-item" data-service="vjing" aria-pressed="false">
+          <span class="menu-item__num">06</span>
+          <span class="menu-item__name">V-Jing</span>
+        </button>
+        <button class="menu-item" data-service="mariage" aria-pressed="false">
+          <span class="menu-item__num">07</span>
+          <span class="menu-item__name">Mariage</span>
+        </button>
+        <button class="menu-item" data-service="produit" aria-pressed="false">
+          <span class="menu-item__num">08</span>
+          <span class="menu-item__name">Présentation produit</span>
+        </button>
+        <button class="menu-item" data-service="aftermovie" aria-pressed="false">
+          <span class="menu-item__num">09</span>
+          <span class="menu-item__name">Aftermovie</span>
+        </button>
+        <button class="menu-item" data-service="live" aria-pressed="false">
+          <span class="menu-item__num">10</span>
+          <span class="menu-item__name">Captation live</span>
+        </button>
+        <button class="menu-item" data-service="formation" aria-pressed="false">
+          <span class="menu-item__num">11</span>
+          <span class="menu-item__name">Formations &amp; tutos</span>
+        </button>
+        <button class="menu-item" data-service="3d" aria-pressed="false">
+          <span class="menu-item__num">12</span>
+          <span class="menu-item__name">3D</span>
+        </button>
+        <button class="menu-item" data-service="motion" aria-pressed="false">
+          <span class="menu-item__num">13</span>
+          <span class="menu-item__name">Motion design</span>
+        </button>
+        <button class="menu-item" data-service="photo" aria-pressed="false">
+          <span class="menu-item__num">14</span>
+          <span class="menu-item__name">Photographie</span>
+        </button>
+      </aside>
+
+      <!-- Panneau de détail -->
+      <div class="services-detail" id="servicesDetail">
+
+        <!-- 01 — Film d'entreprise -->
+        <article class="service-panel active" id="panel-film" aria-label="Film d'entreprise">
+          <p class="panel-eyebrow">Service 01</p>
+          <h2 class="panel-title">Film<br/>d'entreprise</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Mettez en valeur votre marque et transmettez vos valeurs à travers un
+            <strong>film professionnel sur mesure</strong>. Un format polyvalent,
+            pensé pour votre site, vos réseaux et vos présentations.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Mise en valeur de votre marque et de vos équipes</li>
+            <li class="panel-point">Transmission de vos valeurs avec un storytelling fort</li>
+            <li class="panel-point">Format polyvalent : site web, réseaux sociaux, présentations</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">2 000 € – 10 000 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-next="reportage"><span>→</span> Service suivant</button>
+          </div>
+        </article>
+
+        <!-- 02 — Reportage -->
+        <article class="service-panel" id="panel-reportage" aria-label="Reportage">
+          <p class="panel-eyebrow">Service 02</p>
+          <h2 class="panel-title">Reportage</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Une <strong>immersion authentique</strong> dans votre activité ou vos événements.
+            Captation dynamique qui retranscrit l'énergie du moment.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Immersion dans votre activité ou vos événements</li>
+            <li class="panel-point">Captation authentique et dynamique</li>
+            <li class="panel-point">Multi-formats pour tous supports</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">1 500 € – 5 000 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="film"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="publicite"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 03 — Publicité -->
+        <article class="service-panel" id="panel-publicite" aria-label="Publicité">
+          <p class="panel-eyebrow">Service 03</p>
+          <h2 class="panel-title">Publicité</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Des vidéos <strong>courtes à fort impact</strong> — storytelling visuel percutant,
+            formats adaptés aux réseaux sociaux et à la diffusion digitale.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Vidéos courtes à fort impact émotionnel</li>
+            <li class="panel-point">Storytelling visuel, direction artistique forte</li>
+            <li class="panel-point">Formats adaptés à chaque réseau social</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">1 000 € – 20 000 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="reportage"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="reseaux"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 04 — Réseaux sociaux -->
+        <article class="service-panel" id="panel-reseaux" aria-label="Contenus pour réseaux sociaux">
+          <p class="panel-eyebrow">Service 04</p>
+          <h2 class="panel-title">Réseaux<br/>sociaux</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Des contenus <strong>dynamiques et engageants</strong>, nativement adaptés
+            à TikTok, Instagram, LinkedIn et YouTube.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Formats dynamiques et engageants</li>
+            <li class="panel-point">Adaptés à TikTok, Instagram, LinkedIn…</li>
+            <li class="panel-point">Optimisés pour la performance organique</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">300 € – 2 000 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="publicite"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="clip"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 05 — Clip vidéo -->
+        <article class="service-panel" id="panel-clip" aria-label="Clip vidéo">
+          <p class="panel-eyebrow">Service 05</p>
+          <h2 class="panel-title">Clip<br/>vidéo</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Un <strong>espace de création totale</strong> où votre musique prend vie à l'image.
+            Phase de préparation minutieuse, aspect artistique poussé, échanges réguliers.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Phase de préparation minutieuse et créative</li>
+            <li class="panel-point">Aspect artistique mis en valeur — prise de vue ou animation 3D</li>
+            <li class="panel-point">Échanges réguliers durant tout le montage</li>
+            <li class="panel-point">Possibilité de demande de subvention pour projets d'envergure</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarification</span>
+            <span class="panel-tarif__price" style="color:var(--muted);font-size:16px;font-weight:400;font-style:italic">Devis sur projet</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="reseaux"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="vjing"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 06 — V-Jing -->
+        <article class="service-panel" id="panel-vjing" aria-label="V-Jing">
+          <p class="panel-eyebrow">Service 06</p>
+          <h2 class="panel-title">V-Jing</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Des <strong>visuels génératifs et réactifs</strong> au son ou à la caméra,
+            projetés en live pour sublimer vos événements.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Esthétiques réactifs au son et à la caméra</li>
+            <li class="panel-point">Préparation des visuels en amont avec TouchDesigner</li>
+            <li class="panel-point">Gestion de la projection sur place</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">300 € – 900 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="clip"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="mariage"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 07 — Mariage -->
+        <article class="service-panel" id="panel-mariage" aria-label="Mariage">
+          <p class="panel-eyebrow">Service 07</p>
+          <h2 class="panel-title">Mariage</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Votre journée, capturée dans toute son émotion.
+            Un montage <strong>alliant images et musiques précises</strong>,
+            pour un souvenir à vie.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Échange préalable sur le résultat recherché</li>
+            <li class="panel-point">Captation des différents lieux et moments clés</li>
+            <li class="panel-point">Montage alliant images et musiques précises</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">1 700 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="vjing"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="produit"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 08 — Présentation produit -->
+        <article class="service-panel" id="panel-produit" aria-label="Présentation de produit">
+          <p class="panel-eyebrow">Service 08</p>
+          <h2 class="panel-title">Présentation<br/>produit</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Valorisez vos produits avec une vidéo qui met en avant
+            leurs <strong>caractéristiques clés</strong>,
+            en studio ou en situation réelle.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Analyse des caractéristiques clés du produit</li>
+            <li class="panel-point">Captation en studio ou en situation réelle</li>
+            <li class="panel-point">Intégration de textes et animations explicatives</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">500 € – 5 000 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="mariage"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="aftermovie"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 09 — Aftermovie -->
+        <article class="service-panel" id="panel-aftermovie" aria-label="Aftermovie">
+          <p class="panel-eyebrow">Service 09</p>
+          <h2 class="panel-title">Aftermovie</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Capturez l'énergie de votre événement dans un
+            <strong>rendu rythmé et cinématographique</strong>,
+            la musique parfaite en toile de fond.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Captation des moments forts de l'événement</li>
+            <li class="panel-point">Rendu rythmé, musique adaptée</li>
+            <li class="panel-point">Un souvenir valorisant pour votre audience</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">700 € – 6 000 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="produit"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="live"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 10 — Captation live -->
+        <article class="service-panel" id="panel-live" aria-label="Captation live">
+          <p class="panel-eyebrow">Service 10</p>
+          <h2 class="panel-title">Captation<br/>live</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Enregistrement professionnel en <strong>multi-caméras</strong>
+            pour concerts, conférences ou spectacles.
+            Option montage post-live disponible.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Captation multi-caméras en temps réel</li>
+            <li class="panel-point">Option montage post-live des meilleurs extraits</li>
+            <li class="panel-point">Son de qualité professionnelle</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">800 € – 15 000 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="aftermovie"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="formation"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 11 — Formations & tutos -->
+        <article class="service-panel" id="panel-formation" aria-label="Formations et tutoriels">
+          <p class="panel-eyebrow">Service 11</p>
+          <h2 class="panel-title">Formations<br/>&amp; tutos</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Partagez votre savoir-faire avec des vidéos
+            <strong>pédagogiques claires et structurées</strong>,
+            compatibles LMS et e-learning.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Script pédagogique structuré en amont</li>
+            <li class="panel-point">Tournage clair avec animations explicatives</li>
+            <li class="panel-point">Compatible LMS, e-learning ou réseaux sociaux</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarif indicatif</span>
+            <span class="panel-tarif__price">800 € – 5 000 €</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="live"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="3d"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 12 — 3D -->
+        <article class="service-panel" id="panel-3d" aria-label="Animation 3D">
+          <p class="panel-eyebrow">Service 12</p>
+          <h2 class="panel-title">3D</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Donnez une <strong>dimension nouvelle à votre contenu</strong> grâce à
+            l'animation 3D — modélisation, rendu photoréaliste et intégration
+            dans vos vidéos.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Modélisation et animation d'objets ou de logos</li>
+            <li class="panel-point">Rendu photoréaliste ou stylisé selon votre univers</li>
+            <li class="panel-point">Intégration dans vos films, clips ou présentations</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarification</span>
+            <span class="panel-tarif__price" style="color:var(--muted);font-size:16px;font-weight:400;font-style:italic">Devis sur projet</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="formation"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="motion"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 13 — Motion design -->
+        <article class="service-panel" id="panel-motion" aria-label="Motion design">
+          <p class="panel-eyebrow">Service 13</p>
+          <h2 class="panel-title">Motion<br/>design</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Animez votre identité visuelle avec du
+            <strong>motion design sur mesure</strong> — génériques, titres animés,
+            infographies cinétiques et habillages vidéo.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Génériques d'intro &amp; d'outro personnalisés</li>
+            <li class="panel-point">Titres, sous-titres et infographies animées</li>
+            <li class="panel-point">Habillage graphique complet pour vos vidéos</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarification</span>
+            <span class="panel-tarif__price" style="color:var(--muted);font-size:16px;font-weight:400;font-style:italic">Devis sur projet</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="3d"><span>←</span> Précédent</button>
+            <button class="panel-nav-btn" data-nav-next="photo"><span>→</span> Suivant</button>
+          </div>
+        </article>
+
+        <!-- 14 — Photographie -->
+        <article class="service-panel" id="panel-photo" aria-label="Photographie">
+          <p class="panel-eyebrow">Service 14</p>
+          <h2 class="panel-title">Photo&shy;graphie</h2>
+          <div class="panel-divider"></div>
+          <p class="panel-description">
+            Un <strong>service photographique complémentaire</strong>
+            disponible en shooting dédié ou pendant le tournage.
+            Retouche professionnelle incluse.
+          </p>
+          <ul class="panel-points">
+            <li class="panel-point">Shooting photo dédié ou simultané au tournage</li>
+            <li class="panel-point">Prise de vue en situation réelle</li>
+            <li class="panel-point">Retouche professionnelle après tournage</li>
+          </ul>
+          <div class="panel-tarif">
+            <span class="panel-tarif__label">Tarification</span>
+            <span class="panel-tarif__price" style="color:var(--muted);font-size:16px;font-weight:400;font-style:italic">Sur devis</span>
+          </div>
+          <div class="panel-nav">
+            <button class="panel-nav-btn" data-nav-prev="motion"><span>←</span> Précédent</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         TARIFS INDICATIFS
+    ══════════════════════════════════════ -->
+    <section class="tarifs-section" aria-labelledby="tarifs-title" id="tarifs">
+      <div class="container">
+
+        <div class="reveal">
+          <p class="section-label" style="color:var(--muted)"><span style="display:block;width:32px;height:1px;background:var(--muted);flex-shrink:0"></span>Transparence tarifaire</p>
+          <h2 class="section-title section-title--light" id="tarifs-title">
+            TARIFS<br/>INDICATIFS.
+          </h2>
+        </div>
+
+        <div class="tarifs-table-wrap reveal">
+          <table class="tarifs-table" aria-label="Tableau des tarifs">
+            <thead>
+              <tr>
+                <th scope="col">Service</th>
+                <th scope="col" style="text-align:right">Tarif indicatif</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="tarif-service">Film d'entreprise</div><div class="tarif-desc">Marque, valeurs, polyvalent</div></td>
+                <td><span class="tarif-price">2 000 € – 10 000 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Reportage</div><div class="tarif-desc">Événements, immersion</div></td>
+                <td><span class="tarif-price">1 500 € – 5 000 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Publicité</div><div class="tarif-desc">Fort impact, réseaux sociaux</div></td>
+                <td><span class="tarif-price">1 000 € – 20 000 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Réseaux sociaux</div><div class="tarif-desc">TikTok, Instagram, LinkedIn</div></td>
+                <td><span class="tarif-price">300 € – 2 000 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Présentation produit</div><div class="tarif-desc">Studio ou en situation réelle</div></td>
+                <td><span class="tarif-price">500 € – 5 000 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Aftermovie</div><div class="tarif-desc">Événements, rythmé + musique</div></td>
+                <td><span class="tarif-price">700 € – 6 000 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Captation live</div><div class="tarif-desc">Multi-caméras, extraits post-live</div></td>
+                <td><span class="tarif-price">800 € – 15 000 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">V-Jing</div><div class="tarif-desc">Réactif son/caméra, projection live</div></td>
+                <td><span class="tarif-price">300 € – 900 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Mariage</div><div class="tarif-desc">Captation multi-lieux + montage</div></td>
+                <td><span class="tarif-price">1 700 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Formations / tutos</div><div class="tarif-desc">LMS, e-learning, réseaux</div></td>
+                <td><span class="tarif-price">800 € – 5 000 €</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Clip vidéo</div><div class="tarif-desc">Créatif, variable selon projet</div></td>
+                <td><span class="tarif-price tarif-price--devis">Devis sur projet</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">3D</div><div class="tarif-desc">Modélisation, animation, rendu</div></td>
+                <td><span class="tarif-price tarif-price--devis">Devis sur projet</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Motion design</div><div class="tarif-desc">Génériques, titres animés, habillage</div></td>
+                <td><span class="tarif-price tarif-price--devis">Devis sur projet</span></td>
+              </tr>
+              <tr>
+                <td><div class="tarif-service">Photographie</div><div class="tarif-desc">Shooting ou tournage simultané</div></td>
+                <td><span class="tarif-price tarif-price--devis">Sur devis</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="tarifs-note">
+            <strong>Tarif vidéaste : 200 € / jour.</strong>
+            Les prix varient selon la durée, la complexité, le nombre de techniciens et le niveau de post-production. Tous les projets font l'objet d'un devis personnalisé.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         ABONNEMENTS
+    ══════════════════════════════════════ -->
+    <section class="abonnements-section" aria-labelledby="abo-title" id="abonnements">
+      <div class="container">
+
+        <div class="reveal">
+          <p class="section-label">Présence vidéo régulière</p>
+          <h2 class="section-title" id="abo-title">
+            ABONNEMENTS<br/>
+            <span style="color:var(--or)">MENSUELS.</span>
+          </h2>
+          <p style="font-size:16px;color:var(--muted);font-weight:300;margin-top:20px;max-width:480px;line-height:1.7">
+            Pour les entreprises qui souhaitent une présence vidéo
+            <strong style="color:var(--blanc)">régulière et optimisée</strong>.
+            Plus l'abonnement est élevé, plus la remise sur les services ponctuels est importante.
+          </p>
+        </div>
+
+        <div class="abonnements-grid">
+
+          <!-- ESSENTIEL -->
+          <div class="abo-card reveal reveal-d1">
+            <span class="abo-badge abo-badge--outline">Essentiel</span>
+            <div class="abo-name">Essentiel</div>
+            <div class="abo-price">300 <span>€/mois</span></div>
+            <div class="abo-divider"></div>
+            <ul class="abo-features">
+              <li class="abo-feature abo-feature--highlight">1 vidéo courte par mois (30–60 sec)</li>
+              <li class="abo-feature">Format optimisé pour les réseaux (Reels, Instagram, TikTok)</li>
+              <li class="abo-feature">Montage simple et musiques libres de droits</li>
+              <li class="abo-feature">1–2 révisions incluses</li>
+            </ul>
+            <div class="abo-remise">–10% sur des services supplémentaires</div>
+            <a href="contact.html" class="btn"><span>Choisir ce plan</span></a>
+          </div>
+
+          <!-- STATION (featured) -->
+          <div class="abo-card abo-card--featured reveal reveal-d2">
+            <span class="abo-badge">Station</span>
+            <div class="abo-name">Station</div>
+            <div class="abo-price">700 <span>€/mois</span></div>
+            <div class="abo-divider"></div>
+            <ul class="abo-features">
+              <li class="abo-feature abo-feature--highlight">2–3 vidéos par mois (1–2 min)</li>
+              <li class="abo-feature">Format multi-plateformes (YouTube, Facebook, Instagram, LinkedIn)</li>
+              <li class="abo-feature">Animation légère incluse</li>
+              <li class="abo-feature">3 révisions incluses</li>
+            </ul>
+            <div class="abo-remise">–20% sur des services supplémentaires</div>
+            <a href="contact.html" class="btn"><span>Choisir ce plan</span></a>
+          </div>
+
+          <!-- PREMIUM -->
+          <div class="abo-card reveal reveal-d3">
+            <span class="abo-badge abo-badge--outline">Premium</span>
+            <div class="abo-name">Premium</div>
+            <div class="abo-price">1 300 <span>€/mois</span></div>
+            <div class="abo-divider"></div>
+            <ul class="abo-features">
+              <li class="abo-feature abo-feature--highlight">4–6 vidéos par mois (jusqu'à 5 min)</li>
+              <li class="abo-feature">Contenus variés (interview, reportage, événementiel…)</li>
+              <li class="abo-feature">Montage avancé inclus</li>
+              <li class="abo-feature">Support prioritaire 7j/7</li>
+            </ul>
+            <div class="abo-remise">–30% sur des services supplémentaires</div>
+            <a href="contact.html" class="btn"><span>Choisir ce plan</span></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/LOGO LA STATION-05.png" alt="La Station" />
+          <p class="footer-tagline">Agence audiovisuelle basée à Rennes.<br/>Fondée par trois passionnés d'image.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigation secondaire">
+          <p class="footer-nav-title">Navigation</p>
+          <ul>
+            <li><a href="https://work.lastation-prod.com">WORK</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="faq/index.html">FAQ</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <p class="footer-contact-title">Contact</p>
+          <ul>
+            <li><a href="mailto:contact@lastation-prod.com">contact@lastation-prod.com</a></li>
+            <li><a href="tel:+33675611172">06 75 61 11 72</a></li>
+            <li><a href="https://instagram.com/Lastation.prod" target="_blank" rel="noopener">@Lastation.prod</a></li>
+            <li><a href="https://lastation-prod.com" target="_blank" rel="noopener">lastation-prod.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© LA STATION — TOUS DROITS RÉSERVÉS</span>
+        <span class="footer-copy" style="color:var(--or)">RENNES, BRETAGNE</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+  <script>
+    /* ── Services 2-column switcher ── */
+    (function () {
+      const menuItems = document.querySelectorAll('.menu-item');
+      const panels    = document.querySelectorAll('.service-panel');
+
+      function activate(serviceKey) {
+        // menu
+        menuItems.forEach(btn => {
+          const active = btn.dataset.service === serviceKey;
+          btn.classList.toggle('active', active);
+          btn.setAttribute('aria-pressed', active);
+        });
+        // panels
+        panels.forEach(panel => {
+          const active = panel.id === 'panel-' + serviceKey;
+          panel.classList.toggle('active', active);
+          if (active) {
+            panel.setAttribute('aria-current', 'true');
+            panel.removeAttribute('hidden');
+          } else {
+            panel.removeAttribute('aria-current');
+          }
+        });
+        // scroll menu item into view (mobile)
+        const activeBtn = document.querySelector('.menu-item[data-service="' + serviceKey + '"]');
+        if (activeBtn) activeBtn.scrollIntoView({ block: 'nearest', inline: 'center' });
+      }
+
+      // menu clicks
+      menuItems.forEach(btn => {
+        btn.addEventListener('click', () => activate(btn.dataset.service));
+      });
+
+      // panel nav buttons
+      document.addEventListener('click', e => {
+        const btn = e.target.closest('[data-nav-next], [data-nav-prev]');
+        if (!btn) return;
+        const key = btn.dataset.navNext || btn.dataset.navPrev;
+        if (key) activate(key);
+      });
+    })();
+  </script>
+
+</body>
+</html>

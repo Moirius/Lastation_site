@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find 'D:\\\\claude_code\\\\site web' -type f -name *.html -o -name *.css -o -name *.js)"
+    ]
+  }
+}

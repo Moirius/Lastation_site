@@ -1,0 +1,125 @@
+/* ============================================================
+   LA STATION — ANIMATIONS CSS
+   Keyframes · Transitions · Scroll indicators
+   ============================================================ */
+
+/* ── Scroll pulse indicator ── */
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.6); opacity: 0.5; }
+}
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.scroll-indicator__dot {
+  width: 8px; height: 8px;
+  background: var(--or);
+  border-radius: 50%;
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+.scroll-indicator__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--or);
+  writing-mode: horizontal-tb;
+}
+
+/* ── Hero entrance ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-fade-up {
+  animation: fade-up 0.9s var(--ease) both;
+}
+.anim-fade-up--d1 { animation-delay: 0.1s; }
+.anim-fade-up--d2 { animation-delay: 0.25s; }
+.anim-fade-up--d3 { animation-delay: 0.4s; }
+.anim-fade-up--d4 { animation-delay: 0.55s; }
+
+/* ── Char split ── */
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.char.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Reveal on scroll (JS adds .revealed) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal--left {
+  transform: translateX(-40px);
+}
+.reveal--left.revealed {
+  transform: translateX(0);
+}
+.reveal--right {
+  transform: translateX(40px);
+}
+.reveal--right.revealed {
+  transform: translateX(0);
+}
+
+/* Stagger delays */
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+.reveal-d6 { transition-delay: 0.6s; }
+
+/* ── Timeline step draw ── */
+@keyframes line-grow {
+  from { height: 0; }
+  to   { height: 100%; }
+}
+
+/* ── Gold shimmer on hover ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── Underline draw ── */
+.underline-draw {
+  position: relative;
+  display: inline-block;
+}
+.underline-draw::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--or);
+  transition: width 0.45s var(--ease);
+}
+.underline-draw:hover::after { width: 100%; }
+
+/* ── Page fade transition ── */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--noir);
+  z-index: 8888;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+.page-transition.active { opacity: 1; pointer-events: auto; }

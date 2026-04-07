@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>Contact — La Station | Agence audiovisuelle Rennes</title>
+  <meta name="description" content="Contactez La Station — agence audiovisuelle à Rennes. Email, téléphone, Instagram. Disponible pour tous vos projets audiovisuels." />
+
+  <meta property="og:title"       content="Contact — La Station" />
+  <meta property="og:description" content="Parlons de votre projet vidéo. Contactez La Station, agence audiovisuelle à Rennes." />
+  <meta property="og:image"       content="https://lastation-prod.com/assets/images/og-contact.jpg" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://lastation-prod.com/contact.html" />
+  <link rel="canonical"           href="https://lastation-prod.com/contact.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "La Station",
+    "telephone": "+33675611172",
+    "email": "contact@lastation-prod.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rennes",
+      "addressRegion": "Bretagne",
+      "addressCountry": "FR"
+    },
+    "url": "https://lastation-prod.com",
+    "openingHours": "Mo-Su 00:00-23:59"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <style>
+    /* ════════════════════════════════════════
+       CONTACT — PAGE FOND GRIS TOILE
+    ════════════════════════════════════════ */
+
+    body { background: var(--toile); }
+
+    /* H1 accessible masqué visuellement */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Override cursor pour fond clair */
+    .cursor { background: var(--noir); }
+    .cursor.hover { background: transparent; border-color: var(--noir); }
+
+    /* Header sur fond clair */
+    .site-header { background: var(--toile); }
+    .site-header .nav-logo img { filter: none; }
+    .site-header .nav-links a { color: var(--noir); }
+    .site-header .nav-links a::after { background: var(--noir); }
+    .site-header .nav-links a.active { color: var(--noir); }
+    .site-header .nav-dot { color: var(--noir); opacity: 0.3; }
+    .burger span { background: var(--noir); }
+
+    /* Burger bien visible sur fond clair */
+    @media (max-width: 768px) {
+      .burger {
+        border: 1.5px solid rgba(15,15,18,0.85);
+      }
+      .burger span { background: var(--noir) !important; }
+    }
+
+    /* ── Héro contact ── */
+    .contact-hero {
+      background: var(--toile);
+      padding: calc(var(--nav-h) + 80px) 0 0;
+    }
+
+    .contact-hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .contact-hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px; height: 1px;
+      background: var(--muted);
+    }
+
+    /* Coordonnées en très grand corps */
+    .contact-big {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 0;
+    }
+
+    .contact-big-item {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(15,15,18,0.1);
+      text-decoration: none;
+      color: var(--noir);
+      transition: color 0.2s;
+      overflow: hidden;
+    }
+    .contact-big-item:first-child { border-top: 1px solid rgba(15,15,18,0.1); }
+    .contact-big-item:hover { color: var(--or); }
+    .contact-big-item:hover .cbi-arrow { transform: translate(4px, -4px); }
+
+    .cbi-type {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      width: 100px;
+      flex-shrink: 0;
+    }
+
+    .cbi-value {
+      font-size: clamp(28px, 4.5vw, 56px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      flex: 1;
+    }
+
+    .cbi-arrow {
+      font-size: 24px;
+      transition: transform 0.3s var(--ease);
+      flex-shrink: 0;
+      opacity: 0.4;
+    }
+
+    /* ── Mention or ── */
+    .contact-mention {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-top: 32px;
+    }
+    .contact-mention::before {
+      content: '●';
+      font-size: 7px;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    /* ── Layout 2 colonnes ── */
+    .contact-body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 80px;
+      padding: 80px 0 120px;
+      align-items: start;
+      max-width: 720px;
+    }
+
+    /* ── Tableau coordonnées ── */
+    .contact-table-section { }
+
+    .contact-table-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .contact-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .contact-table tr {
+      border-bottom: 1px solid rgba(15,15,18,0.1);
+    }
+    .contact-table tr:first-child { border-top: 1px solid rgba(15,15,18,0.1); }
+    .contact-table td {
+      padding: 18px 0;
+      font-family: var(--font);
+      vertical-align: middle;
+    }
+    .ct-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      width: 120px;
+    }
+    .ct-value {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--noir);
+    }
+    .ct-value a {
+      color: var(--noir);
+      transition: color 0.2s;
+    }
+    .ct-value a:hover { color: var(--or); }
+
+    /* Réseaux sociaux */
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--noir);
+      padding: 10px 16px;
+      border: 1px solid rgba(15,15,18,0.2);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .social-link:hover {
+      border-color: var(--noir);
+      background: var(--noir);
+      color: var(--blanc);
+    }
+
+    /* ── Formulaire ── */
+    .contact-form-section { }
+
+    .contact-form-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid rgba(15,15,18,0.15);
+      transition: border-color 0.2s;
+    }
+    .form-field:first-child { border-top: 1px solid rgba(15,15,18,0.15); }
+    .form-field:focus-within {
+      border-bottom-color: var(--noir);
+    }
+
+    .form-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 16px 0 4px;
+      transition: color 0.2s;
+    }
+    .form-field:focus-within .form-label { color: var(--noir); }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      font-family: var(--font);
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--noir);
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 6px 0 16px;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: rgba(15,15,18,0.25); font-weight: 300; }
+
+    .form-select {
+      cursor: none;
+    }
+    .form-select option { background: var(--toile); color: var(--noir); }
+
+    .form-textarea {
+      resize: none;
+      min-height: 100px;
+      line-height: 1.5;
+    }
+
+    /* Champ select : flèche custom */
+    .form-select-wrap {
+      position: relative;
+    }
+    .form-select-wrap::after {
+      content: '↓';
+      position: absolute;
+      right: 0;
+      bottom: 16px;
+      font-size: 14px;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .form-submit {
+      margin-top: 32px;
+      align-self: flex-start;
+    }
+
+    /* Message de confirmation */
+    .form-success {
+      display: none;
+      padding: 24px;
+      border: 1px solid rgba(200,168,75,0.4);
+      background: rgba(200,168,75,0.05);
+      margin-top: 24px;
+    }
+    .form-success p {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--noir);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-success p::before {
+      content: '✓';
+      color: var(--or);
+      font-weight: 700;
+    }
+
+    /* ── Footer sur fond gris toile ── */
+    .site-footer {
+      background: var(--noir);
+      border-top: none;
+    }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE CONTACT
+    ════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .contact-body { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    @media (max-width: 768px) {
+      /* Hero - réduire le padding-top */
+      .contact-hero { padding: calc(var(--nav-h) + 32px) 0 0; }
+
+      /* Big coords */
+      .contact-big-item { padding: 18px 0; gap: 12px; }
+      .cbi-type { width: 60px; font-size: 9px; letter-spacing: 0.2em; }
+      .cbi-value {
+        font-size: clamp(16px, 4.5vw, 26px);
+        overflow-wrap: break-word;
+        word-break: break-word;
+        min-width: 0;
+      }
+      .cbi-arrow { display: none; }
+
+      /* Tableau */
+      .contact-body { padding: 40px 20px 60px; }
+      .ct-label { font-size: 10px; width: 90px; letter-spacing: 0.2em; }
+      .ct-value { font-size: 15px; }
+      .contact-table td { padding: 14px 0; }
+
+      /* Boutons sociaux */
+      .social-links { flex-wrap: wrap; gap: 8px; }
+      .social-link { font-size: 10px; padding: 10px 14px; }
+    }
+
+    @media (max-width: 480px) {
+      .contact-hero { padding: calc(var(--nav-h) + 24px) 0 0; }
+      .contact-big-item { padding: 14px 0; gap: 10px; }
+      .cbi-type { width: 52px; }
+      .cbi-value { font-size: clamp(14px, 4vw, 20px); }
+      .ct-label { width: 80px; }
+      .ct-value { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════
+       HEADER (fond clair)
+  ══════════════════════════════════════ -->
+  <header class="site-header scrolled" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="La Station — Accueil">
+      <img src="images/LOGO LA STATION-05.png" alt="La Station" style="filter:none" />
+    </a>
+    <nav class="nav-links" role="navigation" aria-label="Navigation principale">
+      <a href="https://work.lastation-prod.com" style="color:var(--noir)">WORK</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+      <a href="services.html" style="color:var(--noir)">SERVICES</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+      <a href="faq/index.html" style="color:var(--noir)">FAQ</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+      <a href="about.html" style="color:var(--noir)">ABOUT</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+      <a href="contact.html" class="active" style="color:var(--noir)">CONTACT</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" style="--burger-color:var(--noir)">
+      <span style="background:var(--noir)"></span>
+      <span style="background:var(--noir)"></span>
+      <span style="background:var(--noir)"></span>
+    </button>
+  </header>
+
+  <nav class="nav-mobile" aria-label="Navigation mobile">
+    <a href="https://work.lastation-prod.com">WORK</a>
+    <a href="services.html">SERVICES</a>
+    <a href="faq/index.html">FAQ</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO CONTACT
+    ══════════════════════════════════════ -->
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <div class="container">
+
+        <h1 id="contact-title" class="sr-only">Contact — La Station</h1>
+        <p class="contact-hero-eyebrow anim-fade-up">Parlons de votre projet</p>
+
+        <!-- Coordonnées en très grand corps -->
+        <div class="contact-big anim-fade-up anim-fade-up--d1" role="list" aria-label="Coordonnées">
+
+          <a href="mailto:contact@lastation-prod.com" class="contact-big-item" role="listitem">
+            <span class="cbi-type">Email</span>
+            <span class="cbi-value">contact@lastation-prod.com</span>
+            <span class="cbi-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a href="tel:+33675611172" class="contact-big-item" role="listitem">
+            <span class="cbi-type">Téléphone</span>
+            <span class="cbi-value">06 75 61 11 72</span>
+            <span class="cbi-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a href="https://instagram.com/Lastation.prod" target="_blank" rel="noopener" class="contact-big-item" role="listitem">
+            <span class="cbi-type">Instagram</span>
+            <span class="cbi-value">@Lastation.prod</span>
+            <span class="cbi-arrow" aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         CORPS : TABLEAU + FORMULAIRE
+    ══════════════════════════════════════ -->
+    <section class="contact-body container" aria-label="Informations de contact et formulaire">
+
+      <!-- Tableau + réseaux -->
+      <div class="contact-table-section reveal">
+        <p class="contact-table-title">Nos coordonnées</p>
+
+        <table class="contact-table" aria-label="Coordonnées complètes">
+          <tbody>
+            <tr>
+              <td class="ct-label">Email</td>
+              <td class="ct-value"><a href="mailto:contact@lastation-prod.com">contact@lastation-prod.com</a></td>
+            </tr>
+            <tr>
+              <td class="ct-label">Téléphone</td>
+              <td class="ct-value"><a href="tel:+33675611172">06 75 61 11 72</a></td>
+            </tr>
+            <tr>
+              <td class="ct-label">Instagram</td>
+              <td class="ct-value"><a href="https://instagram.com/Lastation.prod" target="_blank" rel="noopener">@Lastation.prod</a></td>
+            </tr>
+            <tr>
+              <td class="ct-label">Site web</td>
+              <td class="ct-value"><a href="https://lastation-prod.com" target="_blank" rel="noopener">lastation-prod.com</a></td>
+            </tr>
+            <tr>
+              <td class="ct-label">Localisation</td>
+              <td class="ct-value">Rennes, Bretagne, France</td>
+            </tr>
+            <tr>
+              <td class="ct-label">Disponibilité</td>
+              <td class="ct-value" style="color:var(--or)">7j/7</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="social-links" style="margin-top:40px">
+          <a href="https://instagram.com/Lastation.prod" target="_blank" rel="noopener" class="social-link" data-hover>
+            Instagram
+          </a>
+          <a href="https://lastation-prod.com" target="_blank" rel="noopener" class="social-link" data-hover>
+            Site web
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/LOGO LA STATION-05.png" alt="La Station" loading="lazy" />
+          <p class="footer-tagline">Agence audiovisuelle basée à Rennes.<br/>Fondée par trois passionnés d'image.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigation secondaire">
+          <p class="footer-nav-title">Navigation</p>
+          <ul>
+            <li><a href="https://work.lastation-prod.com">WORK</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="faq/index.html">FAQ</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <p class="footer-contact-title">Contact</p>
+          <ul>
+            <li><a href="mailto:contact@lastation-prod.com">contact@lastation-prod.com</a></li>
+            <li><a href="tel:+33675611172">06 75 61 11 72</a></li>
+            <li><a href="https://instagram.com/Lastation.prod" target="_blank" rel="noopener">@Lastation.prod</a></li>
+            <li><a href="https://lastation-prod.com" target="_blank" rel="noopener">lastation-prod.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© LA STATION — TOUS DROITS RÉSERVÉS</span>
+        <span class="footer-copy" style="color:var(--or)">RENNES, BRETAGNE</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+  <script>
+    /* ── Formulaire : feedback visuel ── */
+    const form    = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+
+    if (form) {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const required = form.querySelectorAll('[required]');
+        let valid = true;
+        required.forEach(el => {
+          if (!el.value.trim()) {
+            valid = false;
+            el.closest('.form-field').style.borderBottomColor = 'var(--rouge)';
+          } else {
+            el.closest('.form-field').style.borderBottomColor = '';
+          }
+        });
+
+        if (!valid) return;
+
+        /* Ici brancher un service d'envoi (Formspree, Netlify Forms, etc.) */
+        form.style.opacity = '0.4';
+        form.style.pointerEvents = 'none';
+        success.style.display = 'block';
+        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      /* Reset couleur erreur à la saisie */
+      form.querySelectorAll('input, select, textarea').forEach(el => {
+        el.addEventListener('input', () => {
+          el.closest('.form-field').style.borderBottomColor = '';
+        });
+      });
+    }
+
+    /* ── Header adapté fond clair ── */
+    const header = document.querySelector('.site-header');
+    if (header) {
+      header.style.background = 'var(--toile)';
+      window.addEventListener('scroll', () => {
+        header.style.background = 'var(--toile)';
+      });
+    }
+  </script>
+
+</body>
+</html>

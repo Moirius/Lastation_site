@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>La Station — Agence audiovisuelle Rennes</title>
+  <meta name="description" content="La Station est une agence audiovisuelle basée à Rennes. Films d'entreprise, clips vidéo, captation live, V-Jing. Fondée par trois passionnés d'image." />
+
+  <meta property="og:title"       content="La Station — Agence audiovisuelle Rennes" />
+  <meta property="og:description" content="Films d'entreprise, clips, reportages, live. Fondée par trois passionnés d'image." />
+  <meta property="og:image"       content="https://lastation-prod.com/assets/images/og-home.jpg" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://lastation-prod.com" />
+  <link rel="canonical"           href="https://lastation-prod.com" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "La Station",
+    "description": "Agence audiovisuelle basée à Rennes",
+    "telephone": "+33675611172",
+    "email": "contact@lastation-prod.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rennes",
+      "addressRegion": "Bretagne",
+      "addressCountry": "FR"
+    },
+    "url": "https://lastation-prod.com"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <style>
+    /* ════════════════════════════════════════
+       INDEX — HERO PLEIN ÉCRAN
+    ════════════════════════════════════════ */
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      height: 100svh;
+      min-height: 600px;
+      background: var(--noir);
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+    }
+
+    /* Grain cinéma */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 5;
+      opacity: 0.4;
+    }
+
+    /* Vidéo de fond */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* Overlay gradient directionnel */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 80% at 50% 50%, rgba(15,15,18,0.35) 0%, rgba(15,15,18,0.75) 100%),
+        linear-gradient(to right, rgba(15,15,18,0.55) 0%, transparent 40%, transparent 60%, rgba(15,15,18,0.55) 100%);
+      z-index: 1;
+    }
+
+    /* Lignes de grille décoratives */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-grid-line {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(200,168,75,0.12) 20%,
+        rgba(200,168,75,0.12) 80%,
+        transparent 100%);
+    }
+    .hero-grid-line:nth-child(1) { left: 16.666%; }
+    .hero-grid-line:nth-child(2) { left: 33.333%; }
+    .hero-grid-line:nth-child(3) { left: 50%; }
+    .hero-grid-line:nth-child(4) { left: 66.666%; }
+    .hero-grid-line:nth-child(5) { left: 83.333%; }
+
+
+    /* ── Titre scindé ── */
+    .hero-title-split {
+      position: absolute;
+      bottom: 120px;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0 40px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .hero-word {
+      font-size: clamp(96px, 16vw, 220px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.85;
+      letter-spacing: -0.03em;
+      color: var(--blanc);
+      opacity: 0;
+    }
+    .hero-word--la {
+      animation: slide-from-left 1s var(--ease) 0.2s both;
+    }
+    .hero-word--station {
+      animation: slide-from-right 1s var(--ease) 0.3s both;
+    }
+    .hero-word--station .dot { color: var(--or); }
+
+    @keyframes slide-from-left {
+      from { opacity: 0; transform: translateX(-60px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slide-from-right {
+      from { opacity: 0; transform: translateX(60px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ── Logo bas gauche ── */
+    .hero-logo {
+      position: absolute;
+      bottom: 36px;
+      left: 40px;
+      z-index: 10;
+      opacity: 0;
+      animation: fade-up 0.7s var(--ease) 1s both;
+    }
+    .hero-logo img {
+      height: 32px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+
+    /* ── Navigation bas droite ── */
+    .hero-nav {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      opacity: 0;
+      animation: fade-up 0.7s var(--ease) 1.1s both;
+    }
+    .hero-nav a {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--blanc);
+      padding: 4px 0;
+      margin-left: 24px;
+      position: relative;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .hero-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--or);
+      transition: width 0.35s var(--ease);
+    }
+    .hero-nav a:hover { opacity: 1; color: var(--or); }
+    .hero-nav a:hover::after { width: 100%; }
+    .hero-nav-dot {
+      color: var(--or);
+      font-weight: 700;
+      font-size: 14px;
+      margin-left: 4px;
+    }
+
+    /* ── Scroll indicator centré bas ── */
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fade-up 0.7s var(--ease) 1.6s both;
+    }
+    .hero-scroll__label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--or);
+    }
+    .hero-scroll__dot {
+      width: 8px; height: 8px;
+      background: var(--or);
+      border-radius: 50%;
+      animation: pulse-dot 1.8s ease-in-out infinite;
+    }
+
+    /* Tagline centre bas (entre logo et nav) */
+    .hero-tagline {
+      position: absolute;
+      bottom: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      text-align: center;
+      white-space: nowrap;
+      opacity: 0;
+      animation: fade-up 0.8s var(--ease) 0.9s both;
+    }
+    .hero-tagline p {
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ════════════════════════════════════════
+       SECTION ACCROCHE
+    ════════════════════════════════════════ */
+    .accroche-section {
+      background: var(--noir);
+      padding: 140px 0 120px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .accroche-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .accroche-left { }
+
+    .accroche-headline {
+      font-size: clamp(40px, 5.5vw, 72px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      color: var(--blanc);
+      margin-bottom: 32px;
+    }
+    .accroche-headline em {
+      color: var(--or);
+      font-style: normal;
+    }
+
+    .accroche-body {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 440px;
+      margin-bottom: 48px;
+    }
+    .accroche-body strong { color: var(--blanc); font-weight: 500; }
+
+    .accroche-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Colonne droite : chiffres + méta */
+    .accroche-right {
+      border-left: 1px solid rgba(255,255,255,0.07);
+      padding-left: 64px;
+    }
+
+    .accroche-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 32px;
+      margin-bottom: 48px;
+    }
+    .accroche-stat__num {
+      font-size: clamp(48px, 5vw, 64px);
+      font-weight: 900;
+      color: var(--blanc);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .accroche-stat__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .accroche-mention {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--or);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .accroche-mention::before {
+      content: '●';
+      font-size: 7px;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    /* ════════════════════════════════════════
+       SECTION SERVICES APERÇU
+    ════════════════════════════════════════ */
+    .services-preview {
+      background: var(--toile);
+      padding: 120px 0;
+    }
+    .services-preview .section-label { color: var(--muted); }
+    .services-preview .section-label::before { background: #555; }
+
+    .services-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+    }
+    .sp-card {
+      background: var(--blanc);
+      padding: 36px 28px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, transform 0.3s var(--ease);
+      cursor: none;
+    }
+    .sp-card:hover {
+      border-bottom-color: var(--noir);
+      transform: translateY(-4px);
+    }
+    .sp-card__num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .sp-card__title {
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--noir);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .sp-card__desc {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.55;
+    }
+
+    .services-preview-cta {
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    /* ════════════════════════════════════════
+       SECTION MANIFESTE
+    ════════════════════════════════════════ */
+    .manifeste-section {
+      background: var(--noir);
+      padding: 140px 0;
+    }
+    .manifeste-inner {
+      max-width: 900px;
+    }
+    .manifeste-quote {
+      font-size: clamp(32px, 4.5vw, 58px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--blanc);
+      margin-bottom: 40px;
+    }
+    .manifeste-quote em {
+      color: var(--or);
+      font-style: normal;
+    }
+    .manifeste-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 540px;
+    }
+    .manifeste-sub strong { color: var(--blanc); font-weight: 500; }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE INDEX
+    ════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .services-preview-grid { grid-template-columns: repeat(2, 1fr); }
+      .accroche-inner { grid-template-columns: 1fr; gap: 48px; }
+      .accroche-right { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 48px; }
+    }
+    @media (max-width: 768px) {
+      .hero-word { font-size: clamp(56px, 16vw, 96px); }
+      .hero-title-split { bottom: 100px; padding: 0 20px; }
+      .hero-grid { display: none; }
+      .hero-tagline { display: none; }
+      .hero-logo { left: 20px; }
+      .hero-nav { right: 20px; }
+      .hero-nav a { font-size: 10px; margin-left: 16px; }
+      .services-preview-grid { grid-template-columns: 1fr 1fr; }
+      .accroche-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero-nav { display: none; }
+      .services-preview-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <!-- Header global (caché sur hero, visible au scroll) -->
+  <header class="site-header" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="La Station — Accueil">
+      <img src="images/LOGO LA STATION-05.png" alt="La Station" />
+    </a>
+    <nav class="nav-links" role="navigation" aria-label="Navigation principale">
+      <a href="https://work.lastation-prod.com">WORK</a><span class="nav-dot">.</span>
+      <a href="services.html">SERVICES</a><span class="nav-dot">.</span>
+      <a href="faq/index.html">FAQ</a><span class="nav-dot">.</span>
+      <a href="about.html">ABOUT</a><span class="nav-dot">.</span>
+      <a href="contact.html">CONTACT</a><span class="nav-dot">.</span>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="nav-mobile" aria-label="Navigation mobile">
+    <a href="https://work.lastation-prod.com">WORK</a>
+    <a href="services.html">SERVICES</a>
+    <a href="faq/index.html">FAQ</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section class="hero" aria-labelledby="hero-main-title">
+
+      <!-- Vidéo de fond -->
+      <video
+        class="hero-video"
+        src="assets/vid%C3%A9os/ShReel%20HZ-Sans%20Logo.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+        preload="metadata"
+      ></video>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <!-- Grille verticale déco -->
+      <div class="hero-grid" aria-hidden="true">
+        <div class="hero-grid-line"></div>
+        <div class="hero-grid-line"></div>
+        <div class="hero-grid-line"></div>
+        <div class="hero-grid-line"></div>
+        <div class="hero-grid-line"></div>
+      </div>
+
+      <!-- Titre scindé -->
+      <div class="hero-title-split" role="heading" aria-level="1" id="hero-main-title" aria-label="La Station">
+        <span class="hero-word hero-word--la" aria-hidden="true">LA</span>
+        <span class="hero-word hero-word--station" aria-hidden="true">STATION<span class="dot">.</span></span>
+      </div>
+
+      <!-- Tagline centrale -->
+      <div class="hero-tagline" aria-hidden="true">
+        <p>Agence audiovisuelle · Rennes, Bretagne</p>
+      </div>
+
+      <!-- Logo bas gauche -->
+      <a href="index.html" class="hero-logo" aria-label="La Station">
+        <img src="images/LOGO LA STATION-05.png" alt="La Station" loading="lazy" />
+      </a>
+
+      <!-- Navigation bas droite -->
+      <nav class="hero-nav" aria-label="Navigation hero">
+        <a href="https://work.lastation-prod.com">WORK</a><span class="hero-nav-dot">.</span>
+        <a href="services.html">SERVICES</a><span class="hero-nav-dot">.</span>
+        <a href="faq/index.html">FAQ</a><span class="hero-nav-dot">.</span>
+        <a href="about.html">ABOUT</a><span class="hero-nav-dot">.</span>
+        <a href="contact.html">CONTACT</a><span class="hero-nav-dot">.</span>
+      </nav>
+
+      <!-- Scroll indicator centré bas -->
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="hero-scroll__label">SCROLL</span>
+        <span class="hero-scroll__dot"></span>
+      </div>
+
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         ACCROCHE
+    ══════════════════════════════════════ -->
+    <section class="accroche-section" aria-label="Présentation">
+      <div class="container">
+        <div class="accroche-inner">
+
+          <div class="accroche-left reveal reveal--left">
+            <h2 class="accroche-headline">
+              L'IMAGE<br/>
+              AU SERVICE<br/>
+              DE <em>VOTRE HISTOIRE.</em>
+            </h2>
+            <p class="accroche-body">
+              Agence audiovisuelle basée à <strong>Rennes</strong>, fondée par
+              trois passionnés d'image. Nous accompagnons les entreprises et
+              les artistes dans la création de contenus vidéo
+              <strong>originaux et impactants</strong>.
+            </p>
+            <div class="accroche-cta">
+              <a href="https://work.lastation-prod.com" class="btn"><span>Voir nos projets</span></a>
+              <a href="services.html" class="btn" style="border-color:var(--muted);color:var(--muted)"><span>Nos services</span></a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         APERÇU SERVICES
+    ══════════════════════════════════════ -->
+    <section class="services-preview" aria-labelledby="sp-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label" style="color:var(--muted)"><span style="display:block;width:32px;height:1px;background:var(--muted);flex-shrink:0"></span>Ce que nous faisons</p>
+          <h2 class="section-title section-title--light" id="sp-title">NOS EXPERTISES.</h2>
+        </div>
+
+        <div class="services-preview-grid">
+          <a href="services.html#catalogue" class="sp-card reveal reveal-d1" data-hover>
+            <p class="sp-card__num">01 — 03</p>
+            <h3 class="sp-card__title">Corporate</h3>
+            <p class="sp-card__desc">Films d'entreprise, interviews, reportages</p>
+          </a>
+          <a href="services.html#catalogue" class="sp-card reveal reveal-d2" data-hover>
+            <p class="sp-card__num">04 — 06</p>
+            <h3 class="sp-card__title">Artistique</h3>
+            <p class="sp-card__desc">Publicités, réseaux sociaux, clips vidéo</p>
+          </a>
+          <a href="services.html#catalogue" class="sp-card reveal reveal-d3" data-hover>
+            <p class="sp-card__num">07 — 11</p>
+            <h3 class="sp-card__title">Live &amp; Événement</h3>
+            <p class="sp-card__desc">V-Jing, mariages, aftermovies, captation live</p>
+          </a>
+          <a href="services.html#catalogue" class="sp-card reveal reveal-d4" data-hover>
+            <p class="sp-card__num">12 — 14</p>
+            <h3 class="sp-card__title">Spécialisé</h3>
+            <p class="sp-card__desc">Formations, génération procédurale, photo</p>
+          </a>
+        </div>
+
+        <div class="services-preview-cta reveal">
+          <a href="services.html" class="btn btn--dark"><span>Tous nos services</span></a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         MANIFESTE
+    ══════════════════════════════════════ -->
+    <section class="manifeste-section" aria-label="Notre vision">
+      <div class="container">
+        <div class="manifeste-inner reveal">
+          <p class="section-label">Notre vision</p>
+          <h2 class="manifeste-quote">
+            CHAQUE PROJET EST<br/>
+            UNE NOUVELLE<br/>
+            HISTOIRE À <em>RACONTER.</em>
+          </h2>
+          <p class="manifeste-sub">
+            Du clip d'artiste au film institutionnel, de la captation live
+            au contenu pour les réseaux — nous abordons chaque mission
+            avec la même <strong>exigence créative</strong> et la même passion
+            pour l'image.
+          </p>
+          <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
+            <a href="about.html" class="btn"><span>Notre histoire</span></a>
+            <a href="contact.html" class="btn" style="border-color:var(--muted);color:var(--muted)"><span>Nous contacter</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="images/LOGO LA STATION-05.png" alt="La Station" loading="lazy" />
+          <p class="footer-tagline">Agence audiovisuelle basée à Rennes.<br/>Fondée par trois passionnés d'image.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigation secondaire">
+          <p class="footer-nav-title">Navigation</p>
+          <ul>
+            <li><a href="https://work.lastation-prod.com">WORK</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="faq/index.html">FAQ</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <p class="footer-contact-title">Contact</p>
+          <ul>
+            <li><a href="mailto:contact@lastation-prod.com">contact@lastation-prod.com</a></li>
+            <li><a href="tel:+33675611172">06 75 61 11 72</a></li>
+            <li><a href="https://instagram.com/Lastation.prod" target="_blank" rel="noopener">@Lastation.prod</a></li>
+            <li><a href="https://lastation-prod.com" target="_blank" rel="noopener">lastation-prod.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© LA STATION — TOUS DROITS RÉSERVÉS</span>
+        <span class="footer-copy" style="color:var(--or)">RENNES, BRETAGNE</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>

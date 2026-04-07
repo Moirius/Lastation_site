@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Comment estimer un devis de production vidéo | La Station Rennes</title>
+  <meta name="description" content="Derrière chaque devis de production vidéo se cache une mécanique précise. Découvrez les critères qui font varier le prix et comment La Station construit ses estimations à Rennes." />
+  <link rel="canonical" href="https://lastation-prod.com/faq/comment-estimer-devis-video.html" />
+
+  <meta property="og:title"       content="Comment estimer un devis de production vidéo | La Station Rennes" />
+  <meta property="og:description" content="Les critères qui font varier le prix d'une production vidéo et comment nous construisons nos estimations." />
+  <meta property="og:image"       content="https://lastation-prod.com/assets/images/og-home.jpg" />
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://lastation-prod.com/faq/comment-estimer-devis-video.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "La Station",
+    "description": "Agence audiovisuelle basée à Rennes",
+    "telephone": "+33675611172",
+    "email": "contact@lastation-prod.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rennes",
+      "addressRegion": "Bretagne",
+      "addressCountry": "FR"
+    },
+    "url": "https://lastation-prod.com"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Comment nous estimons un devis de production vidéo",
+    "description": "Derrière chaque devis de production vidéo se cache une mécanique précise. Découvrez les critères qui font varier le prix et comment La Station construit ses estimations.",
+    "author": {
+      "@type": "Organization",
+      "name": "La Station",
+      "url": "https://lastation-prod.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "La Station"
+    },
+    "datePublished": "2026-04-06",
+    "dateModified": "2026-04-06",
+    "mainEntityOfPage": "https://lastation-prod.com/faq/comment-estimer-devis-video.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qui fait varier le prix d'une vidéo professionnelle ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le prix d'une production vidéo dépend principalement de la durée du tournage, du nombre de lieux, de la complexité technique (drone, steadicam, éclairage), du volume de post-production (montage, étalonnage, motion design) et des éventuelles prestations annexes (acteurs, voix off, musique)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien coûte une vidéo d'entreprise à Rennes ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le coût d'une vidéo d'entreprise à Rennes varie selon les besoins du projet. La Station propose des formules d'abonnement à partir de 300€/mois ainsi que des devis sur-mesure. Contactez-nous pour une estimation adaptée à votre projet."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <style>
+
+    /* ════════════════════════════════════════
+       PAGE ARTICLE — BASE
+    ════════════════════════════════════════ */
+
+    body {
+      background: var(--toile);
+      color: var(--noir);
+      cursor: auto;
+    }
+    body a { color: inherit; }
+    button { cursor: pointer; }
+
+    .cursor { background: var(--noir); }
+    .cursor.hover { background: transparent; border-color: var(--noir); }
+    .site-header .nav-links a { color: var(--noir); }
+    .site-header .nav-links a::after { background: var(--noir); }
+    .site-header .nav-dot { color: var(--noir); opacity: 0.3; }
+    .burger span { background: var(--noir); }
+    .site-header { background: var(--toile) !important; }
+
+    /* ════════════════════════════════════════
+       HERO ARTICLE
+    ════════════════════════════════════════ */
+
+    .article-hero {
+      background: var(--toile);
+      padding: calc(var(--nav-h) + 64px) 0 56px;
+      border-bottom: 1px solid rgba(15,15,18,0.08);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .breadcrumb a { color: var(--muted); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--or); }
+    .breadcrumb span { color: var(--or); }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .article-category {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--or);
+      background: rgba(200,168,75,0.12);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .article-date,
+    .article-read {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .article-title {
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--noir);
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    .article-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 640px;
+      line-height: 1.65;
+    }
+
+    /* ════════════════════════════════════════
+       CORPS DE L'ARTICLE
+    ════════════════════════════════════════ */
+
+    .article-body {
+      padding: 80px 0 100px;
+    }
+
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .article-intro {
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      font-weight: 400;
+      color: var(--noir);
+      line-height: 1.8;
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(15,15,18,0.1);
+    }
+
+    .article-body h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--noir);
+      margin: 56px 0 20px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+    .article-body h2 .h2-num {
+      font-size: 0.75em;
+      font-weight: 900;
+      color: var(--or);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .article-body h3 {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 700;
+      color: var(--noir);
+      margin: 36px 0 14px;
+    }
+
+    .article-body p {
+      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      font-weight: 300;
+      color: #2a2a2e;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .article-body strong { font-weight: 600; color: var(--noir); }
+
+    .article-body a {
+      color: var(--noir);
+      text-decoration: underline;
+      text-decoration-color: var(--or);
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .article-body a:hover { color: var(--or); }
+
+    /* Callout */
+    .article-callout {
+      border-left: 3px solid var(--or);
+      padding: 1.25rem 1.5rem;
+      background: rgba(200,168,75,0.06);
+      margin: 36px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .article-callout p {
+      margin-bottom: 0;
+      font-weight: 400;
+      color: var(--noir);
+    }
+
+    /* Tableau des facteurs */
+    .factors-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 0.95rem;
+    }
+    .factors-table th {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 10px 16px;
+      border-bottom: 2px solid var(--or);
+    }
+    .factors-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(15,15,18,0.08);
+      font-weight: 300;
+      color: #2a2a2e;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .factors-table td:first-child {
+      font-weight: 700;
+      color: var(--noir);
+      width: 35%;
+    }
+    .factors-table tr:last-child td { border-bottom: none; }
+
+    /* ════════════════════════════════════════
+       CTA FIN D'ARTICLE
+    ════════════════════════════════════════ */
+
+    .article-cta {
+      background: var(--noir);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .article-cta .cta-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .article-cta .cta-label::before,
+    .article-cta .cta-label::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--or);
+    }
+    .article-cta .cta-title {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--blanc);
+      margin-bottom: 40px;
+      line-height: 1;
+    }
+    .article-cta .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ════════════════════════════════════════
+       ARTICLES LIÉS
+    ════════════════════════════════════════ */
+
+    .related-articles {
+      background: var(--toile);
+      padding: 100px 0;
+      border-top: 1px solid rgba(15,15,18,0.08);
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .related-card {
+      background: var(--blanc);
+      display: block;
+      padding: 2rem;
+      color: var(--noir);
+      text-decoration: none;
+      transition: background 0.3s var(--ease);
+      position: relative;
+    }
+    .related-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--or);
+      transition: width 0.4s var(--ease);
+    }
+    .related-card:hover { background: #F2F0EA; }
+    .related-card:hover::after { width: 100%; }
+
+    .related-card-cat {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 10px;
+    }
+    .related-card-title {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: var(--noir);
+    }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════ */
+
+    @media (max-width: 768px) {
+      .related-grid { grid-template-columns: 1fr; }
+      .factors-table { font-size: 0.85rem; }
+      .factors-table td:first-child { width: auto; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <header class="site-header" role="banner">
+    <a href="../index.html" class="nav-logo" aria-label="La Station — Accueil">
+      <img src="../images/LOGO LA STATION-05.png" alt="La Station" />
+    </a>
+    <nav class="nav-links" role="navigation" aria-label="Navigation principale">
+      <a href="https://work.lastation-prod.com" style="color:var(--noir)">WORK</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+      <a href="../services.html" style="color:var(--noir)">SERVICES</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+      <a href="index.html" class="active" style="color:var(--noir)">FAQ</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+      <a href="../about.html" style="color:var(--noir)">ABOUT</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+      <a href="../contact.html" style="color:var(--noir)">CONTACT</a><span class="nav-dot" style="color:rgba(15,15,18,0.3)">.</span>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="nav-mobile" aria-label="Navigation mobile">
+    <a href="https://work.lastation-prod.com">WORK</a>
+    <a href="../services.html">SERVICES</a>
+    <a href="index.html">FAQ</a>
+    <a href="../about.html">ABOUT</a>
+    <a href="../contact.html">CONTACT</a>
+  </nav>
+
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO ARTICLE
+    ══════════════════════════════════════ -->
+    <section class="article-hero" aria-labelledby="article-title">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../index.html">Accueil</a>
+          <span>·</span>
+          <a href="index.html">FAQ</a>
+          <span>·</span>
+          <span>Estimer un devis vidéo</span>
+        </nav>
+
+        <div class="article-meta">
+          <span class="article-category">BUDGET</span>
+          <span class="article-date">Avril 2026</span>
+          <span class="article-read">6 min de lecture</span>
+        </div>
+
+        <h1 class="article-title" id="article-title">COMMENT NOUS ESTIMONS UN DEVIS DE PRODUCTION VIDÉO</h1>
+        <p class="article-subtitle">Un devis n'est pas un chiffre sorti du chapeau. C'est le résultat d'une analyse précise de votre projet — durée, complexité, formats, post-production. Voici notre méthode.</p>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         CORPS DE L'ARTICLE
+    ══════════════════════════════════════ -->
+    <div class="article-body">
+      <div class="article-container">
+
+        <p class="article-intro">
+          "Combien ça coûte une vidéo ?" C'est la question que presque tous nos interlocuteurs posent en premier — et c'est tout à fait normal. Chez La Station, agence audiovisuelle à Rennes, nous comprenons que le budget est une contrainte réelle qui conditionne les décisions. Mais nous savons aussi qu'il est impossible de répondre honnêtement à cette question sans connaître le projet. Voici pourquoi, et surtout : voici les critères précis que nous analysons pour construire une estimation juste, transparente et réaliste.
+        </p>
+
+
+        <h2><span class="h2-num">01</span> POURQUOI IL N'EXISTE PAS DE PRIX STANDARD</h2>
+
+        <p>La question "combien coûte une vidéo" revient à demander "combien coûte une voiture". La réponse dépend entièrement de ce que vous attendez : une citadine ou un SUV haut de gamme, un véhicule neuf ou d'occasion, avec ou sans options.</p>
+
+        <p>Une vidéo de 90 secondes pour les réseaux sociaux d'une PME rennaise et un film institutionnel de 3 minutes destiné à un salon professionnel national sont deux projets fondamentalement différents — même si leur durée finale est comparable. Les ressources mobilisées, les compétences requises, le temps passé : tout diffère.</p>
+
+        <div class="article-callout">
+          <p>Un devis précis n'est possible qu'après un brief. Notre premier échange avec un client n'est pas une négociation commerciale — c'est une session de travail pour comprendre exactement ce dont vous avez besoin.</p>
+        </div>
+
+        <p>C'est pourquoi nous ne pratiquons pas les tarifs "à partir de X euros" affichés sans contexte. Nous préférons construire chaque devis à partir des besoins réels du projet, pour ne vous facturer que ce qui est nécessaire — ni plus, ni moins.</p>
+
+
+        <h2><span class="h2-num">02</span> LES FACTEURS QUI DÉTERMINENT LE PRIX</h2>
+
+        <p>Voici les critères que nous analysons systématiquement pour chiffrer un projet de <a href="../services.html">production vidéo</a>.</p>
+
+        <table class="factors-table" aria-label="Facteurs de tarification">
+          <thead>
+            <tr>
+              <th>Facteur</th>
+              <th>Impact sur le budget</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Durée du tournage</td>
+              <td>Nombre de jours sur le terrain, taille de l'équipe, déplacements hors Bretagne</td>
+            </tr>
+            <tr>
+              <td>Nombre de lieux</td>
+              <td>Chaque lieu implique logistique, transport, préparation et autorisations éventuelles</td>
+            </tr>
+            <tr>
+              <td>Complexité technique</td>
+              <td>Drone, steadicam, éclairage professionnel, matériel spécialisé selon les besoins</td>
+            </tr>
+            <tr>
+              <td>Volume de post-production</td>
+              <td>Durée du <a href="importance-du-montage-video.html">montage</a>, étalonnage, motion design, nombre de versions livrées</td>
+            </tr>
+            <tr>
+              <td>Prestations annexes</td>
+              <td>Acteurs, voix off, musique originale ou droits musicaux, sous-titrage</td>
+            </tr>
+            <tr>
+              <td>Délai de livraison</td>
+              <td>Un délai très court peut nécessiter une organisation exceptionnelle</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Chacun de ces facteurs a un poids variable selon le type de projet. Pour un reportage événementiel à Rennes, la durée du tournage et la réactivité du montage seront prédominantes. Pour un film institutionnel, la préparation en amont et la qualité de la post-production pèseront davantage.</p>
+
+
+        <h2><span class="h2-num">03</span> NOTRE MÉTHODE DE CHIFFRAGE EN PRATIQUE</h2>
+
+        <h3>Étape 1 — Le brief</h3>
+        <p>Tout commence par une conversation. Nous cherchons à comprendre : quel est l'objectif de la vidéo ? À qui s'adresse-t-elle ? Sur quels supports sera-t-elle diffusée ? Quel ton, quelle durée ? Y a-t-il des contraintes particulières (lieu, calendrier, charte graphique) ?</p>
+
+        <p>Ces questions ne sont pas des formalités administratives. Elles déterminent directement la nature du projet et donc son coût réel.</p>
+
+        <h3>Étape 2 — La décomposition du projet</h3>
+        <p>À partir du brief, nous décomposons le projet en phases de travail :</p>
+        <p><strong>Pré-production</strong> — Écriture du synopsis ou du script, repérages, organisation logistique, préparation technique. Cette phase est souvent invisible mais indispensable à la qualité du résultat.</p>
+        <p><strong>Production (tournage)</strong> — Nombre de jours, taille de l'équipe (réalisateur, cadreur, assistant lumière, preneur de son selon les besoins), location de matériel éventuel.</p>
+        <p><strong>Post-production</strong> — Montage, étalonnage, mixage, habillage graphique, livraison des fichiers dans les formats requis. Cette phase représente souvent entre 30 et 50 % du coût total d'un projet — une proportion normale et justifiée.</p>
+
+        <h3>Étape 3 — La proposition chiffrée</h3>
+        <p>Nous vous soumettons un devis détaillé, ligne par ligne, sans coût caché. Chaque poste est explicité. Vous savez exactement pour quoi vous payez, et nous pouvons ajuster ensemble si certains éléments ne correspondent pas à vos priorités ou à votre budget.</p>
+
+        <div class="article-callout">
+          <p>Nous préférons un devis ajusté à vos contraintes réelles plutôt qu'un projet réduit à la découpe. Si votre budget est limité, nous vous dirons honnêtement ce qui est possible avec les ressources disponibles — et ce qui ne l'est pas.</p>
+        </div>
+
+
+        <h2><span class="h2-num">04</span> NOS FORMULES D'ABONNEMENT : UNE ALTERNATIVE FLEXIBLE</h2>
+
+        <p>Pour les entreprises et organisations qui ont des besoins vidéo récurrents, nous proposons des <strong>formules d'abonnement mensuel</strong>. Cette approche présente plusieurs avantages :</p>
+
+        <p>Elle garantit une <strong>disponibilité régulière</strong> de notre équipe sans avoir à lancer un nouveau processus de devis à chaque projet. Elle permet de <strong>lisser le budget</strong> sur l'année plutôt que de faire face à des dépenses ponctuelles importantes. Et elle favorise une <strong>cohérence éditoriale</strong> — nous connaissons votre marque, votre ton, vos habitudes, ce qui améliore l'efficacité de chaque intervention.</p>
+
+        <p>Nos formules vont de l'essentiel pour les petites structures jusqu'au suivi premium pour les organisations avec des besoins intensifs. Consultez notre page <a href="../services.html">services</a> pour le détail de ces offres.</p>
+
+
+        <h2><span class="h2-num">05</span> CE QUI JUSTIFIE UN INVESTISSEMENT PLUS ÉLEVÉ</h2>
+
+        <p>Il existe un écart de prix important entre une vidéo produite avec un smartphone et un budget minimum, et une production professionnelle. Cet écart est réel, et il se voit — mais pas toujours là où on l'attend.</p>
+
+        <h3>La préparation</h3>
+        <p>Une production professionnelle passe du temps à préparer chaque tournage : repérages, storyboard, organisation des interviews, anticipation des contraintes techniques. Ce travail invisible en amont est ce qui permet au tournage de se dérouler efficacement et au montage d'être fluide.</p>
+
+        <h3>La maîtrise technique</h3>
+        <p>Un rendu image propre, une gestion de la lumière adaptée aux conditions réelles, un son capté correctement dès le tournage — ce sont des compétences qui s'acquièrent avec l'expérience et qui ne s'improvisent pas. Corriger un problème technique en post-production coûte toujours plus cher que de le prévenir sur le terrain.</p>
+
+        <h3>La post-production soignée</h3>
+        <p>Comme nous l'expliquons dans notre article sur <a href="importance-du-montage-video.html">l'importance du montage</a>, la post-production est une phase longue et exigeante. Un étalonnage colorimétrique cohérent, un mixage sonore professionnel, des titres et habillages graphiques travaillés — tout cela demande du temps et de l'expertise.</p>
+
+        <div class="article-callout">
+          <p>Investir dans une production vidéo de qualité, c'est investir dans l'image que vous renvoyez. Une vidéo est souvent le premier contact d'un prospect avec votre entreprise — elle doit être à la hauteur de ce que vous proposez.</p>
+        </div>
+
+
+        <h2><span class="h2-num">06</span> CONCLUSION</h2>
+
+        <p>Estimer le prix d'une production vidéo n'est pas un exercice arbitraire. C'est une analyse rigoureuse des besoins du projet, traduite en temps de travail et en ressources mobilisées. Chez La Station, à Rennes, nous nous engageons à vous fournir des devis clairs, détaillés et honnêtes — pour que vous puissiez prendre vos décisions en connaissance de cause.</p>
+
+        <p>La meilleure façon de savoir ce que représente votre projet, c'est d'en parler ensemble. Un échange de trente minutes suffit en général à poser les bases d'une estimation sérieuse.</p>
+
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         CTA
+    ══════════════════════════════════════ -->
+    <section class="article-cta" aria-label="Contact">
+      <div class="container">
+        <p class="cta-label">Parlons de votre projet</p>
+        <h2 class="cta-title">DEMANDEZ UN DEVIS.</h2>
+        <div class="cta-actions">
+          <a href="../contact.html" class="btn"><span>Nous contacter</span></a>
+          <a href="../services.html" class="btn" style="border-color:var(--muted);color:var(--muted)"><span>Voir les tarifs</span></a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         ARTICLES LIÉS
+    ══════════════════════════════════════ -->
+    <section class="related-articles" aria-label="Articles liés">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label" style="color:var(--muted)"><span style="display:block;width:32px;height:1px;background:var(--muted);flex-shrink:0"></span>Continuer à lire</p>
+          <h2 class="section-title section-title--light">ARTICLES LIÉS.</h2>
+        </div>
+        <div class="related-grid">
+          <a href="importance-du-montage-video.html" class="related-card reveal reveal-d1" data-hover>
+            <p class="related-card-cat">PRODUCTION</p>
+            <h3 class="related-card-title">L'IMPORTANCE DU MONTAGE DANS UNE VIDÉO PROFESSIONNELLE</h3>
+          </a>
+          <a href="index.html" class="related-card reveal reveal-d2" data-hover>
+            <p class="related-card-cat">RESSOURCES</p>
+            <h3 class="related-card-title">VOIR TOUS LES ARTICLES →</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="../images/LOGO LA STATION-05.png" alt="La Station" loading="lazy" />
+          <p class="footer-tagline">Agence audiovisuelle basée à Rennes.<br/>Fondée par trois passionnés d'image.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigation secondaire">
+          <p class="footer-nav-title">Navigation</p>
+          <ul>
+            <li><a href="https://work.lastation-prod.com">WORK</a></li>
+            <li><a href="../services.html">SERVICES</a></li>
+            <li><a href="index.html">FAQ</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+            <li><a href="../contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <p class="footer-contact-title">Contact</p>
+          <ul>
+            <li><a href="mailto:contact@lastation-prod.com">contact@lastation-prod.com</a></li>
+            <li><a href="tel:+33675611172">06 75 61 11 72</a></li>
+            <li><a href="https://instagram.com/Lastation.prod" target="_blank" rel="noopener">@Lastation.prod</a></li>
+            <li><a href="https://lastation-prod.com" target="_blank" rel="noopener">lastation-prod.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© LA STATION — TOUS DROITS RÉSERVÉS</span>
+        <span class="footer-copy" style="color:var(--or)">RENNES, BRETAGNE</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animations.js"></script>
+
+</body>
+</html>

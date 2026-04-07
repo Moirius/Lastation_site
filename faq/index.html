@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>FAQ — Production vidéo : conseils & ressources | La Station Rennes</title>
+  <meta name="description" content="Tout ce que vous voulez savoir sur la production vidéo professionnelle : montage, devis, choix du prestataire. Conseils experts par La Station, agence audiovisuelle à Rennes." />
+  <link rel="canonical" href="https://lastation-prod.com/faq/index.html" />
+
+  <meta property="og:title"       content="FAQ — Production vidéo | La Station Rennes" />
+  <meta property="og:description" content="Conseils et ressources sur la production vidéo professionnelle par La Station." />
+  <meta property="og:image"       content="https://lastation-prod.com/assets/images/og-home.jpg" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://lastation-prod.com/faq/index.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "La Station",
+    "description": "Agence audiovisuelle basée à Rennes",
+    "telephone": "+33675611172",
+    "email": "contact@lastation-prod.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rennes",
+      "addressRegion": "Bretagne",
+      "addressCountry": "FR"
+    },
+    "url": "https://lastation-prod.com"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+
+  <style>
+
+    /* ════════════════════════════════════════
+       FAQ HUB — HERO
+    ════════════════════════════════════════ */
+
+    .faq-hero {
+      background: var(--noir);
+      padding: calc(var(--nav-h) + 80px) 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Lignes déco verticales */
+    .faq-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(to bottom,
+        transparent,
+        rgba(200,168,75,0.1) 30%,
+        rgba(200,168,75,0.1) 70%,
+        transparent
+      );
+      pointer-events: none;
+    }
+
+    .faq-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-hero-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-hero-label::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--or);
+    }
+
+    .faq-hero-title {
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.9;
+      color: var(--blanc);
+      margin-bottom: 32px;
+    }
+    .faq-hero-title .dot { color: var(--or); }
+
+    .faq-hero-sub {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .faq-hero-count {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .faq-hero-count span {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--blanc);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    /* ════════════════════════════════════════
+       GRILLE D'ARTICLES
+    ════════════════════════════════════════ */
+
+    .faq-grid-section {
+      background: var(--toile);
+      padding: 100px 0 120px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+    }
+
+    .faq-card {
+      background: var(--blanc);
+      display: block;
+      text-decoration: none;
+      color: var(--noir);
+      padding: clamp(2rem, 4vw, 3rem);
+      transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .faq-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--or);
+      transition: width 0.4s var(--ease);
+    }
+    .faq-card:hover { background: #F2F0EA; transform: translateY(-2px); }
+    .faq-card:hover::after { width: 100%; }
+
+    .faq-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .faq-card-category {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--or);
+      background: rgba(200,168,75,0.1);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .faq-card-arrow {
+      font-size: 1.25rem;
+      color: var(--muted);
+      transition: transform 0.3s var(--ease), color 0.3s;
+    }
+    .faq-card:hover .faq-card-arrow {
+      transform: translate(4px, -4px);
+      color: var(--or);
+    }
+
+    .faq-card-title {
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--noir);
+      margin-bottom: 16px;
+    }
+
+    .faq-card-excerpt {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .faq-card-meta {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .faq-card-meta::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--muted);
+    }
+
+    /* Card "à venir" — état désactivé */
+    .faq-card--soon {
+      opacity: 0.45;
+      pointer-events: none;
+    }
+    .faq-card--soon .faq-card-category {
+      background: rgba(136,136,136,0.15);
+      color: var(--muted);
+    }
+
+    /* ════════════════════════════════════════
+       CTA BAS DE PAGE
+    ════════════════════════════════════════ */
+
+    .faq-cta {
+      background: var(--noir);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .faq-cta .section-label {
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .faq-cta-title {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--blanc);
+      margin-bottom: 16px;
+    }
+    .faq-cta-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 48px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .faq-cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════ */
+
+    @media (max-width: 768px) {
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <header class="site-header" role="banner">
+    <a href="../index.html" class="nav-logo" aria-label="La Station — Accueil">
+      <img src="../images/LOGO LA STATION-05.png" alt="La Station" />
+    </a>
+    <nav class="nav-links" role="navigation" aria-label="Navigation principale">
+      <a href="https://work.lastation-prod.com">WORK</a><span class="nav-dot">.</span>
+      <a href="../services.html">SERVICES</a><span class="nav-dot">.</span>
+      <a href="index.html" class="active">FAQ</a><span class="nav-dot">.</span>
+      <a href="../about.html">ABOUT</a><span class="nav-dot">.</span>
+      <a href="../contact.html">CONTACT</a><span class="nav-dot">.</span>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav class="nav-mobile" aria-label="Navigation mobile">
+    <a href="https://work.lastation-prod.com">WORK</a>
+    <a href="../services.html">SERVICES</a>
+    <a href="index.html">FAQ</a>
+    <a href="../about.html">ABOUT</a>
+    <a href="../contact.html">CONTACT</a>
+  </nav>
+
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section class="faq-hero" aria-labelledby="faq-title">
+      <div class="container">
+        <p class="faq-hero-label">Ressources</p>
+        <h1 class="faq-hero-title" id="faq-title">FAQ<span class="dot">.</span></h1>
+        <p class="faq-hero-sub">
+          Tout ce qu'il faut savoir sur la production vidéo professionnelle.
+          Processus, budgets, formats — nos réponses aux questions que vous vous posez.
+        </p>
+        <div class="faq-hero-count">
+          <span>2</span>
+          articles disponibles
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         GRILLE ARTICLES
+    ══════════════════════════════════════ -->
+    <section class="faq-grid-section" aria-label="Articles">
+      <div class="container">
+
+        <div class="reveal">
+          <p class="section-label" style="color:var(--muted)"><span style="display:block;width:32px;height:1px;background:var(--muted);flex-shrink:0"></span>Nos articles</p>
+          <h2 class="section-title section-title--light">PRODUCTION VIDÉO<br/>EN QUESTIONS.</h2>
+        </div>
+
+        <div class="faq-grid">
+
+          <!-- Article 01 -->
+          <a href="importance-du-montage-video.html" class="faq-card reveal reveal-d1" data-hover>
+            <div class="faq-card-top">
+              <span class="faq-card-category">PRODUCTION</span>
+              <span class="faq-card-arrow"></span>
+            </div>
+            <h2 class="faq-card-title">L'IMPORTANCE DU MONTAGE DANS UNE VIDÉO PROFESSIONNELLE</h2>
+            <p class="faq-card-excerpt">Le montage n'est pas une étape secondaire — c'est là que le film prend vie. Comprendre pourquoi cette phase est déterminante pour la qualité finale de votre production.</p>
+            <div class="faq-card-meta">7 min · Avril 2026</div>
+          </a>
+
+          <!-- Article 02 -->
+          <a href="comment-estimer-devis-video.html" class="faq-card reveal reveal-d2" data-hover>
+            <div class="faq-card-top">
+              <span class="faq-card-category">BUDGET</span>
+              <span class="faq-card-arrow"></span>
+            </div>
+            <h2 class="faq-card-title">COMMENT NOUS ESTIMONS UN DEVIS DE PRODUCTION VIDÉO</h2>
+            <p class="faq-card-excerpt">Derrière chaque devis se cache une mécanique précise. Découvrez les critères qui font varier le prix d'une production vidéo et comment nous construisons nos estimations.</p>
+            <div class="faq-card-meta">6 min · Avril 2026</div>
+          </a>
+
+          <!-- À venir 01 -->
+          <div class="faq-card faq-card--soon reveal reveal-d3">
+            <div class="faq-card-top">
+              <span class="faq-card-category">CONSEIL</span>
+              <span class="faq-card-arrow"></span>
+            </div>
+            <h2 class="faq-card-title">POURQUOI INTÉGRER LA VIDÉO DANS VOTRE COMMUNICATION D'ENTREPRISE</h2>
+            <p class="faq-card-excerpt">Article à venir prochainement.</p>
+            <div class="faq-card-meta">Bientôt disponible</div>
+          </div>
+
+          <!-- À venir 02 -->
+          <div class="faq-card faq-card--soon reveal reveal-d4">
+            <div class="faq-card-top">
+              <span class="faq-card-category">CONSEIL</span>
+              <span class="faq-card-arrow"></span>
+            </div>
+            <h2 class="faq-card-title">COMMENT CHOISIR SON PRESTATAIRE VIDÉO À RENNES</h2>
+            <p class="faq-card-excerpt">Article à venir prochainement.</p>
+            <div class="faq-card-meta">Bientôt disponible</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         CTA
+    ══════════════════════════════════════ -->
+    <section class="faq-cta" aria-label="Contact">
+      <div class="container">
+        <p class="section-label" style="justify-content:center"><span style="display:block;width:32px;height:1px;background:var(--or);flex-shrink:0"></span>Passons à l'action</p>
+        <h2 class="faq-cta-title">UN PROJET EN TÊTE ?</h2>
+        <p class="faq-cta-sub">Nos articles vous donnent les clés. Mais rien ne vaut un échange direct pour définir ce dont vous avez besoin.</p>
+        <div class="faq-cta-actions">
+          <a href="../contact.html" class="btn"><span>Nous contacter</span></a>
+          <a href="../services.html" class="btn" style="border-color:var(--muted);color:var(--muted)"><span>Nos services</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="../images/LOGO LA STATION-05.png" alt="La Station" loading="lazy" />
+          <p class="footer-tagline">Agence audiovisuelle basée à Rennes.<br/>Fondée par trois passionnés d'image.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navigation secondaire">
+          <p class="footer-nav-title">Navigation</p>
+          <ul>
+            <li><a href="https://work.lastation-prod.com">WORK</a></li>
+            <li><a href="../services.html">SERVICES</a></li>
+            <li><a href="index.html">FAQ</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+            <li><a href="../contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <p class="footer-contact-title">Contact</p>
+          <ul>
+            <li><a href="mailto:contact@lastation-prod.com">contact@lastation-prod.com</a></li>
+            <li><a href="tel:+33675611172">06 75 61 11 72</a></li>
+            <li><a href="https://instagram.com/Lastation.prod" target="_blank" rel="noopener">@Lastation.prod</a></li>
+            <li><a href="https://lastation-prod.com" target="_blank" rel="noopener">lastation-prod.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© LA STATION — TOUS DROITS RÉSERVÉS</span>
+        <span class="footer-copy" style="color:var(--or)">RENNES, BRETAGNE</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animations.js"></script>
+
+</body>
+</html>

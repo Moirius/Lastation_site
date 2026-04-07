@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- SEO -->
+  <title>À Propos — La Station | Agence audiovisuelle Rennes</title>
+  <meta name="description" content="La Station est une agence audiovisuelle basée à Rennes, fondée par trois passionnés d'image. Découvrez notre équipe, notre méthode en 6 étapes et notre matériel professionnel." />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="À Propos — La Station" />
+  <meta property="og:description" content="Agence audiovisuelle basée à Rennes, fondée par trois passionnés d'image." />
+  <meta property="og:image"       content="https://lastation-prod.com/assets/images/og-about.jpg" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://lastation-prod.com/about.html" />
+  <link rel="canonical"           href="https://lastation-prod.com/about.html" />
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "La Station",
+    "description": "Agence audiovisuelle basée à Rennes",
+    "telephone": "+33675611172",
+    "email": "contact@lastation-prod.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rennes",
+      "addressRegion": "Bretagne",
+      "addressCountry": "FR"
+    },
+    "url": "https://lastation-prod.com"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <style>
+    /* ── PAGE-SPECIFIC: ABOUT ── */
+
+    /* ─── Hero ─── */
+    .about-hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      background: var(--noir);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse 80% 80% at 50% 50%, rgba(15,15,18,0.45) 0%, rgba(15,15,18,0.82) 100%),
+        linear-gradient(to right, rgba(15,15,18,0.5) 0%, transparent 40%, transparent 60%, rgba(15,15,18,0.5) 100%);
+      pointer-events: none;
+    }
+
+
+    /* Deco vertical lines */
+    .hero-deco-line {
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent 0%, rgba(200,168,75,0.18) 40%, rgba(200,168,75,0.18) 70%, transparent 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .hero-deco-line--1 { left: 15%; }
+    .hero-deco-line--2 { right: 15%; }
+
+    .about-hero-content { position: relative; z-index: 3; }
+
+    .about-hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .about-hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px; height: 1px;
+      background: var(--or);
+    }
+
+    .about-hero-title {
+      font-size: clamp(72px, 13vw, 160px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      color: var(--blanc);
+      margin-bottom: 32px;
+    }
+
+    .about-hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.55;
+    }
+    .about-hero-sub strong {
+      color: var(--blanc);
+      font-weight: 500;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+    /* ─── Intro / Présentation ─── */
+    .about-intro-section {
+      background: var(--noir);
+      padding: 120px 0;
+    }
+    .about-intro {
+      display: flex;
+      gap: 80px;
+      align-items: flex-start;
+    }
+    .intro-left { flex: 0 0 380px; max-width: 380px; min-width: 280px; width: 100%; }
+    .intro-right { flex: 1; }
+
+    .intro-headline {
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.92;
+      margin-bottom: 32px;
+      color: var(--blanc);
+    }
+    .intro-headline em {
+      color: var(--or);
+      font-style: normal;
+    }
+
+    .intro-body {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .intro-body strong { color: var(--blanc); font-weight: 500; }
+
+    .team-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .team-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border: 1px solid rgba(200,168,75,0.35);
+      color: var(--or);
+    }
+
+    .intro-stat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .intro-stat {
+      border-left: 2px solid var(--or);
+      padding-left: 20px;
+    }
+    .intro-stat__num {
+      font-size: clamp(42px, 5vw, 64px);
+      font-weight: 900;
+      color: var(--blanc);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .intro-stat__label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ─── TIMELINE ─── */
+    .timeline {
+      background: var(--noir);
+      padding: 0 0 160px;
+      position: relative;
+    }
+
+    .timeline-header {
+      padding: 0 0 80px;
+    }
+
+    /* Spine container */
+    .timeline-track {
+      position: relative;
+      padding: 0 40px;
+    }
+
+    /* Vertical gold spine */
+    .timeline-spine {
+      position: absolute;
+      left: calc(40px + (100% - 80px) * 0.5);
+      top: 0; bottom: 0;
+      width: 1px;
+      background: rgba(200,168,75,0.15);
+      transform: translateX(-50%);
+    }
+    .timeline-spine-fill {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 0;
+      background: linear-gradient(to bottom, var(--or), rgba(200,168,75,0.4));
+      transition: height 0.1s linear;
+    }
+
+    /* Each step row */
+    .timeline-step {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 0;
+      min-height: 220px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .timeline-step.step-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger each step */
+    .timeline-step:nth-child(1) { transition-delay: 0.05s; }
+    .timeline-step:nth-child(2) { transition-delay: 0.15s; }
+    .timeline-step:nth-child(3) { transition-delay: 0.25s; }
+    .timeline-step:nth-child(4) { transition-delay: 0.35s; }
+    .timeline-step:nth-child(5) { transition-delay: 0.45s; }
+    .timeline-step:nth-child(6) { transition-delay: 0.55s; }
+
+    /* Left-side step (odd) */
+    .timeline-step--odd .step-body {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: right;
+      padding-right: 48px;
+      border-right: 1px solid rgba(200,168,75,0.2);
+    }
+    .timeline-step--odd .step-center { grid-column: 2; grid-row: 1; }
+    .timeline-step--odd .step-empty  { grid-column: 3; grid-row: 1; }
+
+    /* Right-side step (even) */
+    .timeline-step--even .step-empty { grid-column: 1; grid-row: 1; }
+    .timeline-step--even .step-center { grid-column: 2; grid-row: 1; }
+    .timeline-step--even .step-body {
+      grid-column: 3;
+      grid-row: 1;
+      text-align: left;
+      padding-left: 48px;
+      border-left: 1px solid rgba(200,168,75,0.2);
+    }
+
+    /* Center column: dot + number */
+    .step-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+    .step-dot {
+      width: 14px; height: 14px;
+      background: var(--noir);
+      border: 2px solid var(--or);
+      border-radius: 50%;
+      position: relative;
+      transition: background 0.3s, transform 0.3s;
+      flex-shrink: 0;
+    }
+    .timeline-step.step-visible .step-dot {
+      background: var(--or);
+    }
+    .step-dot::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,168,75,0.25);
+      opacity: 0;
+      transition: opacity 0.4s 0.3s;
+    }
+    .timeline-step.step-visible .step-dot::before { opacity: 1; }
+
+    .step-num-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--or);
+      opacity: 0.6;
+    }
+
+    /* Step body content */
+    .step-body {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    .step-phase {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    .step-title {
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--blanc);
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+
+    .step-desc {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .step-desc strong {
+      color: var(--blanc);
+      font-weight: 500;
+    }
+
+    /* Hover élévation */
+    .timeline-step:hover .step-body {
+      background: rgba(200,168,75,0.03);
+    }
+    .timeline-step:hover .step-dot {
+      transform: scale(1.3);
+    }
+
+    /* Step empty spacing */
+    .step-empty { min-height: 1px; }
+
+    /* ─── Equipment Section ─── */
+    .equipment-section {
+      background: var(--toile);
+      padding: 120px 0;
+    }
+    .equipment-section .section-label { color: var(--muted); }
+    .equipment-section .section-label::before { background: #555; }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+    }
+
+    .equipment-card {
+      background: var(--blanc);
+      padding: 36px 32px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s, transform 0.3s var(--ease), box-shadow 0.3s;
+    }
+    .equipment-card:hover {
+      border-bottom-color: #0F0F12;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(15,15,18,0.12);
+    }
+
+    .eq-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+      line-height: 1;
+      opacity: 0.7;
+    }
+    .eq-category {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .eq-name {
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--noir);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .eq-details {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .eq-details li {
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .eq-details li:last-child { border-bottom: none; }
+    .eq-details li::before {
+      content: '—';
+      color: var(--muted);
+      flex-shrink: 0;
+      font-size: 12px;
+      margin-top: 1px;
+    }
+
+    /* ─── Montage section ─── */
+    .montage-section {
+      background: var(--noir);
+      padding: 120px 0;
+    }
+    .montage-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .montage-left { }
+    .montage-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 40px;
+    }
+    .montage-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .montage-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .montage-item__num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--or);
+      letter-spacing: 0.2em;
+      margin-top: 3px;
+      flex-shrink: 0;
+      width: 24px;
+    }
+    .montage-item__text {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--blanc);
+      line-height: 1.5;
+    }
+    .montage-item__text span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 300;
+    }
+
+    .montage-right {
+      position: relative;
+    }
+    .montage-quote-block {
+      border-left: 3px solid var(--or);
+      padding: 32px 36px;
+      background: rgba(200,168,75,0.04);
+    }
+    .montage-quote {
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--blanc);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .montage-body {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .montage-body strong { color: var(--blanc); font-weight: 500; }
+
+    /* ─── CTA bottom ─── */
+    .about-cta-section {
+      background: var(--noir);
+      padding: 80px 0 120px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .about-cta-section .section-title {
+      margin-bottom: 20px;
+    }
+    .about-cta-section p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ─── Responsive overrides (about-specific) ─── */
+    @media (max-width: 1024px) {
+      .about-intro { flex-direction: column; gap: 48px; }
+      .intro-left  { flex: none; width: 100%; }
+      .intro-stat-list { flex-direction: row; gap: 40px; }
+      .montage-inner { grid-template-columns: 1fr; gap: 48px; }
+      .equipment-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .about-hero-title { font-size: clamp(52px, 14vw, 96px); }
+      .hero-deco-line { display: none; }
+      .intro-stat-list { flex-direction: column; gap: 28px; }
+      .timeline-step { grid-template-columns: 1fr !important; }
+      .timeline-step--odd .step-body,
+      .timeline-step--even .step-body {
+        grid-column: 1; grid-row: 2;
+        text-align: left;
+        padding-left: 24px;
+        padding-right: 0;
+        border-left: 2px solid rgba(200,168,75,0.35) !important;
+        border-right: none !important;
+      }
+      .timeline-step--odd .step-center,
+      .timeline-step--even .step-center {
+        grid-column: 1; grid-row: 1;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 16px;
+        padding-left: 24px;
+      }
+      .timeline-step--odd .step-empty,
+      .timeline-step--even .step-empty { display: none; }
+      .timeline-spine { display: none; }
+      .equipment-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- Page transition overlay -->
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="La Station — Accueil">
+      <img src="images/LOGO LA STATION-05.png" alt="La Station" />
+    </a>
+
+    <nav class="nav-links" role="navigation" aria-label="Navigation principale">
+      <a href="https://work.lastation-prod.com">WORK</a><span class="nav-dot">.</span>
+      <a href="services.html">SERVICES</a><span class="nav-dot">.</span>
+      <a href="faq/index.html">FAQ</a><span class="nav-dot">.</span>
+      <a href="about.html" class="active">ABOUT</a><span class="nav-dot">.</span>
+      <a href="contact.html">CONTACT</a><span class="nav-dot">.</span>
+    </nav>
+
+    <button class="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="nav-mobile" aria-label="Navigation mobile">
+    <a href="https://work.lastation-prod.com">WORK</a>
+    <a href="services.html">SERVICES</a>
+    <a href="faq/index.html">FAQ</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section class="about-hero" aria-labelledby="hero-title">
+
+      <!-- Vidéo de fond -->
+      <video
+        class="hero-video"
+        src="assets/vid%C3%A9os/ShReel%20HZ-Sans%20Logo.mp4"
+        autoplay muted loop playsinline
+        aria-hidden="true"
+        preload="metadata"
+      ></video>
+
+      <!-- Deco lines -->
+      <div class="hero-deco-line hero-deco-line--1" aria-hidden="true"></div>
+      <div class="hero-deco-line hero-deco-line--2" aria-hidden="true"></div>
+
+      <div class="container about-hero-content">
+        <p class="about-hero-eyebrow anim-fade-up">Agence audiovisuelle · Rennes, Bretagne</p>
+
+        <h1 class="about-hero-title" id="hero-title"
+            data-split data-delay="0.2"
+            aria-label="La Station">
+          LA STATION.
+        </h1>
+
+        <p class="about-hero-sub hero-subtitle" data-anim>
+          Fondée par <strong>trois passionnés d'image</strong>, nous accompagnons les entreprises
+          dans la création de contenus vidéo <strong>originaux et impactants</strong>.
+        </p>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero-scroll scroll-indicator" aria-hidden="true">
+        <span class="scroll-indicator__label">SCROLL</span>
+        <span class="scroll-indicator__dot"></span>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         PRÉSENTATION
+    ═══════════════════════════════════════════ -->
+    <section class="about-intro-section" aria-label="Présentation de l'agence">
+      <div class="container">
+        <div class="about-intro">
+
+          <!-- Texte + tags -->
+          <div class="intro-right reveal">
+            <h2 class="intro-headline">
+              UNE AGENCE <em>RENNAISE.</em><br/>
+              TROIS UNIVERS.<br/>
+              UNE VISION.
+            </h2>
+
+            <p class="intro-body">
+              La Station est une agence audiovisuelle basée à <strong>Rennes</strong>,
+              fondée par trois passionnés d'image. Notre équipe réunit des
+              <strong>cadreurs</strong>, <strong>ingénieurs son</strong>,
+              <strong>monteurs</strong> et <strong>animateurs 3D</strong> pour une
+              prise en charge complète de chaque projet.
+            </p>
+            <p class="intro-body">
+              Nous accompagnons aussi bien les artistes de la scène musicale bretonne
+              que les entreprises en quête d'une identité visuelle forte. Du clip vidéo
+              au film d'entreprise, du V-Jing à la captation live — chaque projet est
+              une nouvelle histoire à raconter.
+            </p>
+
+            <div class="team-tags">
+              <span class="team-tag">Cadrage</span>
+              <span class="team-tag">Son</span>
+              <span class="team-tag">Montage</span>
+              <span class="team-tag">Étalonnage</span>
+              <span class="team-tag">Animation 3D</span>
+              <span class="team-tag">V-Jing</span>
+              <span class="team-tag">Drone</span>
+              <span class="team-tag">Photographie</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         MÉTHODE DE TRAVAIL — TIMELINE
+    ═══════════════════════════════════════════ -->
+    <section class="timeline" aria-labelledby="timeline-title" id="methode">
+      <div class="container">
+
+        <div class="timeline-header reveal">
+          <p class="section-label">Notre méthode</p>
+          <h2 class="section-title" id="timeline-title">
+            6 ÉTAPES.<br/>
+            <span style="color:var(--or)">UN RÉSULTAT.</span>
+          </h2>
+        </div>
+
+        <!-- Track avec la spine verticale -->
+        <div class="timeline-track">
+          <div class="timeline-spine" aria-hidden="true">
+            <div class="timeline-spine-fill"></div>
+          </div>
+
+          <!-- ── Étape 01 — Première rencontre ── -->
+          <div class="timeline-step timeline-step--odd" role="listitem">
+
+            <div class="step-body">
+              <p class="step-phase">Étape 01</p>
+              <h3 class="step-title">Première<br/>rencontre</h3>
+              <p class="step-desc">
+                Avant tout engagement, nous prenons le temps de
+                <strong>vous écouter</strong>. Comprendre votre message,
+                votre identité, vos ambitions. Un échange ouvert,
+                sans engagement, pour poser les bases du projet.
+              </p>
+            </div>
+
+            <div class="step-center" aria-hidden="true">
+              <div class="step-dot"></div>
+              <span class="step-num-badge">01</span>
+            </div>
+
+            <div class="step-empty"></div>
+          </div>
+
+          <!-- ── Étape 02 — Conception ── -->
+          <div class="timeline-step timeline-step--even" role="listitem">
+
+            <div class="step-empty"></div>
+
+            <div class="step-center" aria-hidden="true">
+              <div class="step-dot"></div>
+              <span class="step-num-badge">02</span>
+            </div>
+
+            <div class="step-body">
+              <p class="step-phase">Étape 02</p>
+              <h3 class="step-title">Conception</h3>
+              <p class="step-desc">
+                Nous construisons le <strong>concept créatif</strong> :
+                storytelling, choix du style et du format.
+                La direction artistique naît d'un échange
+                entre votre univers et notre vision.
+              </p>
+            </div>
+          </div>
+
+          <!-- ── Étape 03 — Préproduction ── -->
+          <div class="timeline-step timeline-step--odd" role="listitem">
+
+            <div class="step-body">
+              <p class="step-phase">Étape 03</p>
+              <h3 class="step-title">Pré&shy;production</h3>
+              <p class="step-desc">
+                <strong>Script, storyboard, repérage, casting, planification</strong>
+                — tout est préparé avec soin avant le premier plan.
+                Plus la préparation est rigoureuse, plus le tournage est fluide.
+              </p>
+            </div>
+
+            <div class="step-center" aria-hidden="true">
+              <div class="step-dot"></div>
+              <span class="step-num-badge">03</span>
+            </div>
+
+            <div class="step-empty"></div>
+          </div>
+
+          <!-- ── Étape 04 — Production ── -->
+          <div class="timeline-step timeline-step--even" role="listitem">
+
+            <div class="step-empty"></div>
+
+            <div class="step-center" aria-hidden="true">
+              <div class="step-dot"></div>
+              <span class="step-num-badge">04</span>
+            </div>
+
+            <div class="step-body">
+              <p class="step-phase">Étape 04</p>
+              <h3 class="step-title">Production</h3>
+              <p class="step-desc">
+                Tournage avec du <strong>matériel professionnel</strong> —
+                Sony FX3, Ronin-RS3 Pro, Dédolight, DJI Mini.
+                Chaque plan est pensé pour servir le récit.
+              </p>
+            </div>
+          </div>
+
+          <!-- ── Étape 05 — Post-production ── -->
+          <div class="timeline-step timeline-step--odd" role="listitem">
+
+            <div class="step-body">
+              <p class="step-phase">Étape 05</p>
+              <h3 class="step-title">Post&shy;production</h3>
+              <p class="step-desc">
+                <strong>Montage, étalonnage, effets visuels, sound design</strong>
+                — l'image prend vie. Nous travaillons sur DaVinci Resolve Studio,
+                After Effects et la Suite Adobe.
+              </p>
+            </div>
+
+            <div class="step-center" aria-hidden="true">
+              <div class="step-dot"></div>
+              <span class="step-num-badge">05</span>
+            </div>
+
+            <div class="step-empty"></div>
+          </div>
+
+          <!-- ── Étape 06 — Validation & diffusion ── -->
+          <div class="timeline-step timeline-step--even" role="listitem">
+
+            <div class="step-empty"></div>
+
+            <div class="step-center" aria-hidden="true">
+              <div class="step-dot"></div>
+              <span class="step-num-badge">06</span>
+            </div>
+
+            <div class="step-body">
+              <p class="step-phase">Étape 06</p>
+              <h3 class="step-title">Validation<br/>&amp; diffusion</h3>
+              <p class="step-desc">
+                <strong>Ajustements selon vos retours</strong>, export optimisé
+                pour chaque plateforme. Votre projet, prêt à être diffusé
+                exactement là où il doit l'être.
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /timeline-track -->
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         MATÉRIEL PREMIUM
+    ═══════════════════════════════════════════ -->
+    <section class="equipment-section" aria-labelledby="equipment-title">
+      <div class="container">
+
+        <div class="reveal">
+          <p class="section-label" style="color:var(--muted)">
+            <span style="display:block;width:32px;height:1px;background:var(--muted);flex-shrink:0"></span>
+            Matériel premium
+          </p>
+          <h2 class="section-title section-title--light" id="equipment-title">
+            DES OUTILS<br/>À LA HAUTEUR.
+          </h2>
+        </div>
+
+        <div class="equipment-grid">
+
+          <!-- Caméra -->
+          <div class="equipment-card reveal reveal-d1">
+            <div class="eq-icon">◉</div>
+            <p class="eq-category">Caméra principale</p>
+            <h3 class="eq-name">Sony FX3</h3>
+            <ul class="eq-details">
+              <li>Capteur plein format 4K</li>
+              <li>S-Cinetone cinématographique</li>
+              <li>Haute sensibilité en basse lumière</li>
+            </ul>
+          </div>
+
+          <!-- Optiques -->
+          <div class="equipment-card reveal reveal-d2">
+            <div class="eq-icon">◎</div>
+            <p class="eq-category">Optiques</p>
+            <h3 class="eq-name">4 Objectifs</h3>
+            <ul class="eq-details">
+              <li>50mm — portraits & interviews</li>
+              <li>14–30mm — plans larges</li>
+              <li>28–75mm — polyvalent</li>
+              <li>70–300mm — plans à distance</li>
+            </ul>
+          </div>
+
+          <!-- Stabilisateur -->
+          <div class="equipment-card reveal reveal-d3">
+            <div class="eq-icon">⊕</div>
+            <p class="eq-category">Stabilisation</p>
+            <h3 class="eq-name">Ronin-RS3 Pro</h3>
+            <ul class="eq-details">
+              <li>Mouvements fluides en déplacement</li>
+              <li>Plans dynamiques & travelling</li>
+              <li>Compatible Sony FX3</li>
+            </ul>
+          </div>
+
+          <!-- Éclairage -->
+          <div class="equipment-card reveal reveal-d4">
+            <div class="eq-icon"></div>
+            <p class="eq-category">Éclairages</p>
+            <h3 class="eq-name">Dédolight</h3>
+            <ul class="eq-details">
+              <li>Projecteurs haute précision</li>
+              <li>Diffuseurs & filtres couleurs</li>
+              <li>Contrôle total de la lumière</li>
+            </ul>
+          </div>
+
+          <!-- Drone -->
+          <div class="equipment-card reveal reveal-d5">
+            <div class="eq-icon">◈</div>
+            <p class="eq-category">Prises aériennes</p>
+            <h3 class="eq-name">DJI Mini</h3>
+            <ul class="eq-details">
+              <li>Prises de vue aériennes</li>
+              <li>Ultra-compact, discret</li>
+              <li>Plans d'ambiance & extérieurs</li>
+            </ul>
+          </div>
+
+          <!-- Logiciels -->
+          <div class="equipment-card reveal reveal-d6">
+            <div class="eq-icon">⬡</div>
+            <p class="eq-category">Logiciels</p>
+            <h3 class="eq-name">Suite complète</h3>
+            <ul class="eq-details">
+              <li>DaVinci Resolve Studio</li>
+              <li>Premiere Pro / After Effects</li>
+              <li>Photoshop / TouchDesigner</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         CTA FINAL
+    ═══════════════════════════════════════════ -->
+    <section class="about-cta-section" aria-label="Appel à l'action">
+      <div class="container reveal">
+        <h2 class="section-title">UN PROJET<br/>EN TÊTE ?</h2>
+        <p>Disponible 7j/7 — discutons de votre projet.</p>
+        <div class="cta-group">
+          <a href="contact.html" class="btn"><span>Nous contacter</span></a>
+          <a href="https://work.lastation-prod.com" class="btn" style="border-color:var(--muted);color:var(--muted)"><span>Voir nos projets</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          <img src="images/LOGO LA STATION-05.png" alt="La Station" />
+          <p class="footer-tagline">Agence audiovisuelle basée à Rennes.<br/>Fondée par trois passionnés d'image.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Navigation secondaire">
+          <p class="footer-nav-title">Navigation</p>
+          <ul>
+            <li><a href="https://work.lastation-prod.com">WORK</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="faq/index.html">FAQ</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <p class="footer-contact-title">Contact</p>
+          <ul>
+            <li><a href="mailto:contact@lastation-prod.com">contact@lastation-prod.com</a></li>
+            <li><a href="tel:+33675611172">06 75 61 11 72</a></li>
+            <li><a href="https://instagram.com/Lastation.prod" target="_blank" rel="noopener">@Lastation.prod</a></li>
+            <li><a href="https://lastation-prod.com" target="_blank" rel="noopener">lastation-prod.com</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">© LA STATION — TOUS DROITS RÉSERVÉS</span>
+        <span class="footer-copy" style="color:var(--or)">RENNES, BRETAGNE</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>

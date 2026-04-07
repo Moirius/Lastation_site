@@ -1,0 +1,89 @@
+/* ============================================================
+   LA STATION — RESPONSIVE CSS
+   Breakpoints mobile / tablette
+   ============================================================ */
+
+/* ── Tablette ≤ 1024px ── */
+@media (max-width: 1024px) {
+  :root { --nav-h: 64px; }
+
+  .container { padding: 0 28px; }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-brand { grid-column: 1 / -1; }
+
+  /* About – équipement grille */
+  .equipment-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ── Mobile ≤ 768px ── */
+@media (max-width: 768px) {
+  :root { --nav-h: 56px; }
+
+  .container { padding: 0 20px; }
+
+  /* Navigation */
+  .nav-links { display: none; }
+  .burger    { display: flex; }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* Titres section */
+  .section-title { font-size: clamp(32px, 10vw, 56px); }
+
+  /* About hero */
+  .about-hero-title { font-size: clamp(52px, 14vw, 96px) !important; }
+
+  /* Timeline – passe en colonne unique */
+  .timeline { padding: 80px 0 !important; }
+  .timeline-track { padding: 0 20px !important; }
+  .timeline-step { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .timeline-step .step-num { grid-column: 1; text-align: left !important; padding-right: 0 !important; }
+  .timeline-step .step-body { grid-column: 1; padding-left: 0 !important; border-left: none !important; }
+  .timeline-step .step-body::before { display: none; }
+  .timeline-spine { display: none !important; }
+  .step-connector { display: none !important; }
+
+  /* About équipement */
+  .equipment-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* About présentation */
+  .about-intro { flex-direction: column !important; gap: 32px !important; }
+}
+
+/* ── Petit mobile ≤ 480px ── */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .site-header { padding: 0 20px; }
+}
+
+/* ── Très petit mobile ≤ 380px — titre hero ── */
+@media (max-width: 380px) {
+  .hero-word {
+    font-size: clamp(44px, 13vw, 64px) !important;
+  }
+}
+
+/* ── Safe area iOS (notch / home bar) ── */
+.nav-mobile {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.site-footer {
+  padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+}
