@@ -50,4 +50,18 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://lastation-prod.com/faq/pourquoi-video-entreprise</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lastation-prod.com/faq/choisir-prestataire-video-rennes</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
